@@ -222,7 +222,7 @@ export function Module2() {
                     <div className="mt-24 text-center max-w-3xl mx-auto space-y-6">
                         <h3 className="text-3xl md:text-5xl font-display italic text-muted-foreground pb-4">
                             "<SplitText>Coser no es solo unir telas.</SplitText><br />
-                            <SplitText>El detalle es lo que transforma algo simple en algo cuidado"</SplitText>
+                            <SplitText>El detalle es lo que transforma algo simple en algo cuidado."</SplitText>
                         </h3>
                         <p className="text-xl text-dark reveal-text">
                             Cuando aprendemos a mirar los acabados, empezamos a coser distinto.
