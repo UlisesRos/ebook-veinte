@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Home, Menu, X, Scissors } from 'lucide-react';
 import { cn } from '../../lib/utils';
-import gsap from 'gsap';
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,15 +11,6 @@ export function Sidebar() {
     // Close sidebar on mobile when navigating
     setIsOpen(false);
   }, [location]);
-
-  useEffect(() => {
-    // Basic GSAP animation for sidebar items on mount
-    gsap.fromTo(
-      '.sidebar-item',
-      { opacity: 0, x: -20 },
-      { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, ease: 'power2.out' }
-    );
-  }, []);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
