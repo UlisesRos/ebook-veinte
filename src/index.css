@@ -8,7 +8,7 @@
   :root {
     --cream: 45 29% 95%;
     --white: 0 0% 100%;
-    --mint: 120 33% 94%;
+    --mint: 21 35% 31%;
     --lime: 74 100% 78%;
     --dark: 94 11% 14%;
 
@@ -60,7 +60,12 @@
     @apply bg-background text-foreground font-body antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display text-primary;
   }
 }

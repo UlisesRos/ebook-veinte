@@ -3,7 +3,7 @@ import { Sidebar } from './Sidebar';
 
 export function Layout() {
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="min-h-screen bg-white flex">
       <Sidebar />
       <main className="flex-1 lg:pl-72 transition-all duration-300 relative w-full">
         {/* Main content container with max-width for readability */}

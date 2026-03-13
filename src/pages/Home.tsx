@@ -1,36 +1,143 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-
 export function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] text-center max-w-2xl mx-auto space-y-12">
-      <div className="space-y-6 mt-12">
-        <h1 className="text-5xl md:text-6xl font-display text-dark tracking-tight flex flex-col items-center justify-center gap-4">
-          Ebook
-          <img src="/logo.png" alt="Veinte Studio Logo" className="h-16 md:h-20 object-contain invert" />
-        </h1>
-        <p className="text-lg text-muted-foreground font-body leading-relaxed">
-          Este es nuestro webbook interactivo. Aquí encontrarás todo el material, clases y módulos de nuestro studio diseñados para que aprendas a tu propio ritmo.
-        </p>
-      </div>
+    <div
+      className="bg-white flex flex-col items-center justify-center px-6"
+      style={{ minHeight: '100svh', paddingTop: '8vh', paddingBottom: '8vh' }}
+    >
 
-      <div className="relative w-48 h-48 md:w-[260px] md:h-[260px] mx-auto">
-        <div className="absolute inset-0 bg-mint/50 rounded-full blur-3xl -z-10"></div>
-        <img
-          src="/maquina.png"
-          alt="Máquina de coser"
-          className="absolute inset-0 w-full h-full object-contain drop-shadow-xl grayscale"
-        />
-      </div>
+      {/* Eyebrow */}
+      <p
+        className="font-body uppercase text-dark font-bold text-center"
+        style={{ fontSize: '11px', letterSpacing: '0.3em', marginBottom: '1.2rem' }}
+      >
+        ¿Cómo dar tus primeros pasos en costura?
+      </p>
 
-      <div className="pt-8 pb-16">
-        <Link
-          to="/module1"
-          className="inline-flex items-center justify-center gap-2 bg-dark text-cream px-8 py-4 rounded-full font-body font-medium hover:bg-lime hover:text-dark transition-colors"
+      {/* Main title */}
+      <h1
+        className="font-display text-dark text-center"
+        style={{
+          fontSize: 'clamp(4.5rem, 15vw, 9rem)',
+          fontWeight: 400,
+          lineHeight: 1,
+          letterSpacing: '-0.01em',
+          marginBottom: '1.4rem',
+        }}
+      >
+        WEBBOOK
+      </h1>
+
+      {/* Subtitle */}
+      <p
+        className="font-body text-dark text-center leading-relaxed"
+        style={{ fontSize: 'clamp(13px, 2vw, 16px)', maxWidth: '340px', marginBottom: '6vh' }}
+      >
+        Planificá estratégicamente y encontrá razones para crear con confianza.
+      </p>
+
+      {/* Three photos */}
+      <div
+        style={{
+          position: 'relative',
+          /* Desktop: casi todo el ancho disponible, alto generoso */
+          width: 'min(88vw, 680px)',
+          height: 'clamp(280px, 55vw, 480px)',
+          flexShrink: 0,
+        }}
+      >
+
+        {/* Left photo */}
+        <div
+          style={{
+            position: 'absolute',
+            left: 0,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: '44%',
+            height: '82%',
+            background: 'white',
+            borderRadius: '10px',
+            padding: '7px',
+            outline: '1px solid hsl(var(--border))',
+            zIndex: 1,
+            overflow: 'hidden',
+          }}
         >
-          Comenzar Modulo I <ArrowRight size={20} />
-        </Link>
+          <img
+            src="/home-3.jpg"
+            alt="Costura"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block',
+              borderRadius: '5px',
+            }}
+          />
+        </div>
+
+        {/* Right photo */}
+        <div
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: '44%',
+            height: '82%',
+            background: 'white',
+            borderRadius: '10px',
+            padding: '7px',
+            outline: '1px solid hsl(var(--border))',
+            zIndex: 1,
+            overflow: 'hidden',
+          }}
+        >
+          <img
+            src="/home-1.png"
+            alt="Materiales"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block',
+              borderRadius: '5px',
+            }}
+          />
+        </div>
+
+        {/* Center photo — on top, full height */}
+        <div
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '40%',
+            height: '100%',
+            background: 'white',
+            borderRadius: '10px',
+            padding: '7px',
+            outline: '1px solid hsl(var(--border))',
+            zIndex: 10,
+            overflow: 'hidden',
+          }}
+        >
+          <img
+            src="/home-2.png"
+            alt="Técnica textil"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block',
+              borderRadius: '5px',
+            }}
+          />
+        </div>
+
       </div>
+
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Scissors } from 'lucide-react';
 
 export function Module1() {
   const [activeSwatch, setActiveSwatch] = useState<number | null>(null);
@@ -13,10 +14,10 @@ export function Module1() {
       {/* Hero Section */}
       <section className="relative z-10 bg-cream min-h-[85vh] flex flex-col justify-center items-center text-center space-y-12 py-20 px-6">
         <div className="space-y-4 max-w-3xl pt-16">
-          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Módulo I</p>
+          <p className="text-xs tracking-[0.2em] uppercase font-bold text-dark">Módulo I</p>
           <h1 className="text-5xl md:text-7xl font-display text-dark leading-tight pb-2">
             Costura Creativa <br />
-            <span className="italic text-muted-foreground/80 font-normal block mt-2">
+            <span className="italic text-mint font-normal block mt-2">
               Inicial
             </span>
           </h1>
@@ -24,13 +25,13 @@ export function Module1() {
 
         <div className="w-full max-w-md mx-auto aspect-[4/5] overflow-hidden">
           <img
-            src="/gallery-1.jpg"
+            src="/module1.png"
             alt="Detalle textil"
             className="w-full h-full object-cover grayscale-[20%]"
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-8 w-full max-w-2xl border-t border-border/40 pt-8 mt-12 text-sm uppercase tracking-widest text-muted-foreground">
+        <div className="grid grid-cols-3 gap-8 w-full max-w-2xl border-t border-border/40 pt-8 mt-12 text-sm uppercase tracking-widest text-dark">
           <div><span className="block text-dark font-bold mb-1">Modalidad</span>Presencial</div>
           <div><span className="block text-dark font-bold mb-1">Cupos</span>5 personas</div>
           <div><span className="block text-dark font-bold mb-1">Duración</span>3 horas</div>
@@ -38,12 +39,14 @@ export function Module1() {
       </section>
 
       {/* Intro text */}
-      <section className="relative z-20 bg-cream py-24 px-6 border-t border-cream">
+      <section className="bg-cream">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center gap-16">
           <div className="space-y-6 max-w-2xl">
-            <h2 className="uppercase text-3xl md:text-5xl font-display text-dark leading-snug">
+            <h2 className="text-4xl md:text-6xl font-display text-dark leading-snug">
               Introducción<br />
-              al mundo textil
+              <span className="italic lowercase text-mint font-normal block mt-2">
+                al mundo textil
+              </span>
             </h2>
             <p className="text-lg text-dark leading-relaxed">
               Entender las herramientas es el primer paso antes de diseñar.
@@ -52,91 +55,152 @@ export function Module1() {
         </div>
       </section>
 
+      {/* Indice */}
+      <section className="bg-cream mt-16 px-6">
+        <div className="max-w-2xl mx-auto">
+
+          <h2 className="uppercase text-center font-display text-dark mb-2" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400 }}>
+            Contenido
+          </h2>
+
+          <div className="divide-y divide-border/40">
+            {[
+              { n: '01', title: 'Partes de la máquina de coser' },
+              { n: '02', title: 'Agujas de la máquina' },
+              { n: '03', title: 'Cómo enhebrar la máquina' },
+              { n: '04', title: 'Tensión de la máquina' },
+              { n: '05', title: 'Tipos de puntadas básicas' },
+              { n: '06', title: 'Telas' },
+              { n: '07', title: 'Tipos de telas' },
+              { n: '08', title: 'Errores comunes al coser' },
+            ].map((item) => (
+              <div key={item.n} className="flex items-start gap-6 py-8">
+                {/* Number */}
+                <span
+                  className="font-display text-mint leading-none shrink-0"
+                  style={{ fontSize: 'clamp(2.8rem, 7vw, 7rem)', fontWeight: 400, opacity: 1 }}
+                >
+                  {item.n}
+                </span>
+
+                {/* Title */}
+                <div className="pt-2">
+                  <h3
+                    className="font-display text-dark uppercase mt-2 md:mt-10"
+                    style={{ fontSize: 'clamp(0.85rem, 2vw, 1.1rem)', fontWeight: 700, letterSpacing: '0.08em' }}
+                  >
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* Partes de la Maquina */}
-      <section className="relative z-30 bg-cream py-24 px-6 border-t border-white">
+      <section className="relative z-30 bg-cream py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">01. Conociendo el equipo</p>
+            <p className="text-xs tracking-[0.2em] uppercase font-bold text-dark mb-4">01. Conociendo el equipo</p>
             <h3 className="text-4xl md:text-5xl font-display">
-              Partes de la Máquina
+              Partes de la Máquina <br />
+              <span className="font-normal block mt-2">
+                de Coser
+              </span>
             </h3>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
-            {/* Superior */}
+
+            {/* Parte Superior */}
             <div className="space-y-6">
-              <h4 className="text-sm uppercase tracking-widest text-dark font-bold border-b border-border/40 pb-4">
+              <h4 className="text-center text-md uppercase text-dark font-body border-b border-border/40 pb-4">
                 Parte Superior
               </h4>
-              <ul className="space-y-4 text-sm text-muted-foreground leading-relaxed">
-                <li><strong className="text-dark">1. Porta carrete:</strong> Donde se coloca el hilo superior.</li>
-                <li><strong className="text-dark">2. Guía hilos:</strong> Ganchos por donde pasa el hilo.</li>
-                <li><strong className="text-dark">3. Tensor de hilo:</strong> Regula la tensión. Número alto = más tensión. (Punto medio: 4).</li>
-                <li><strong className="text-dark">4. Palanca tira hilo:</strong> Sube y baja al coser. Tira del hilo.</li>
-                <li><strong className="text-dark">5. Volante:</strong> Rueda lateral. Siempre se gira hacia vos.</li>
+              <ul className="space-y-5">
+                {[
+                  { label: 'Porta carrete', desc: 'Lugar donde se coloca el hilo superior.' },
+                  { label: 'Guía hilos', desc: 'Pequeños ganchos por donde pasa el hilo antes de llegar a la aguja.' },
+                  { label: 'Tensor de hilo', desc: 'Regula la tensión del hilo superior. Número más alto: más tensión. Número más bajo: menos tensión.' },
+                  { label: 'Palanca tira hilo', desc: 'Sube y baja al coser arriba de la aguja. Es la que "tira" del hilo en cada puntada.' },
+                  { label: 'Volante', desc: 'Rueda lateral que mueve la aguja manualmente. Siempre se gira hacia vos.' },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-start gap-2">
+                    <Scissors size={14} className="text-dark mt-1 shrink-0" />
+                    <span className="text-sm text-dark leading-relaxed">
+                      <strong className="text-dark">{item.label}:</strong> {item.desc}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Zona Costura */}
+            {/* Zona de Costura */}
             <div className="space-y-6">
-              <h4 className="text-sm uppercase tracking-widest text-dark font-bold border-b border-border/40 pb-4">
+              <h4 className="text-center text-md uppercase text-dark font-body border-b border-border/40 pb-4">
                 Zona de Costura
               </h4>
-              <ul className="space-y-4 text-sm text-muted-foreground leading-relaxed">
-                <li><strong className="text-dark">6. Aguja:</strong> Perfora la tela y forma la puntada.</li>
-                <li><strong className="text-dark">7. Prensatelas:</strong> Sujeta la tela mientras cose.</li>
-                <li><strong className="text-dark">8. Palanca prensatelas:</strong> Sube y baja el prensatelas.</li>
-                <li><strong className="text-dark">9. Placa de aguja:</strong> Base metálica con guías en centímetros.</li>
-                <li><strong className="text-dark">10. Dientes de arrastre:</strong> Mueven la tela hacia atrás. Nunca tires de la tela.</li>
+              <ul className="space-y-5">
+                {[
+                  { label: 'Aguja', desc: 'Perfora la tela y forma la puntada junto con la canilla.' },
+                  { label: 'Prensatelas', desc: 'Pieza que sujeta la tela contra los dientes de arrastre mientras la aguja cose.' },
+                  { label: 'Palanca prensatelas', desc: 'Sube y baja el prensatelas.' },
+                  { label: 'Placa de aguja', desc: 'Base metálica con guías en centímetros justo debajo de la aguja. Ayuda a mantener el margen de costura.' },
+                  { label: 'Dientes de arrastre', desc: 'Pequeños "dientitos" que mueven la tela hacia atrás mientras cose. No hay que tirar la tela, la máquina la mueve sola.' },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-start gap-2">
+                    <Scissors size={14} className="text-dark mt-1 shrink-0" />
+                    <span className="text-sm text-dark leading-relaxed">
+                      <strong className="text-dark">{item.label}:</strong>  {item.desc}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Inferior */}
+            {/* Inferior y Controles */}
             <div className="space-y-6">
-              <h4 className="text-sm uppercase tracking-widest text-dark font-bold border-b border-border/40 pb-4">
+              <h4 className="text-center text-md uppercase text-dark font-body border-b border-border/40 pb-4">
                 Inferior y Controles
               </h4>
-              <ul className="space-y-4 text-sm text-muted-foreground leading-relaxed">
-                <li><strong className="text-dark">11. Canilla o bobina:</strong> Carrete pequeño interior.</li>
-                <li><strong className="text-dark">12. Porta canilla:</strong> Lugar para la canilla.</li>
-                <li><strong className="text-dark">13. Selector de puntada:</strong> Elige recta, zigzag, etc.</li>
-                <li><strong className="text-dark">14. Regulador de largo:</strong> Largo o corto de puntada.</li>
-                <li><strong className="text-dark">15. Pedal:</strong> Controla velocidad y presión.</li>
+              <ul className="space-y-5">
+                {[
+                  { label: 'Canilla o bobina', desc: 'Carrete pequeño que lleva el hilo inferior.' },
+                  { label: 'Porta canilla', desc: 'Lugar donde se coloca la canilla.' },
+                  { label: 'Selector de puntada', desc: 'Elige el tipo de puntada: recta, zigzag, etc.' },
+                  { label: 'Regulador de largo', desc: 'Define si la puntada es larga o corta.' },
+                  { label: 'Pedal', desc: 'Controla la velocidad y la presión al coser.' },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-start gap-2">
+                    <Scissors size={14} className="text-dark mt-1 shrink-0" />
+                    <span className="text-sm text-dark leading-relaxed">
+                      <strong className="text-dark">{item.label}:</strong>  {item.desc}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* Full width image breaker */}
-      <section className="relative z-[35] bg-dark py-12 px-6">
+      <section className="relative z-[35] bg-cream py-12 px-6">
         <div className="max-w-6xl mx-auto w-full h-80 md:h-[60vh] overflow-hidden">
-          <img src="/gallery-2.jpg" alt="Textura de tela" className="w-full h-full object-cover" />
-        </div>
-      </section>
-
-      {/* Rules / Tips */}
-      <section className="relative z-40 bg-white py-32 px-6">
-        <div className="max-w-3xl mx-auto text-center space-y-12">
-          <h3 className="text-3xl md:text-5xl font-display italic text-muted-foreground pb-4">
-            "Los tips de VEINTE<br />
-            antes de coser"
-          </h3>
-          <ul className="text-lg md:text-xl space-y-6 text-dark mx-auto">
-            <li className="border-b border-cream pb-6">Revisar que la aguja esté bien colocada y acorde a la tela.</li>
-            <li className="border-b border-cream pb-6">Chequear tener hilo suficiente en la bobina.</li>
-            <li className="border-b border-cream pb-6">Verificar constantemente la tensión y el largo de puntada.</li>
-          </ul>
+          <img src="/maquina1.jpg" alt="Textura de tela" className="w-full h-full object-cover" />
         </div>
       </section>
 
       {/* Tipos de Telas y Agujas */}
-      <section className="relative z-50 bg-cream py-32 px-6 border-t border-white">
+      <section className="relative z-50 bg-cream mt-10 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div className="sticky top-32 space-y-8">
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">02. Materiales</p>
+            <p className="text-xs tracking-[0.2em] uppercase font-bold text-dark">02. Puntadas</p>
             <h3 className="text-4xl md:text-6xl font-display text-dark">
-              Tipos de Telas y Agujas
+              Agujas de la Máquina
             </h3>
             <p className="text-xl text-muted-foreground">
               La regla básica del diseño textil: tela fina requiere aguja fina, tela gruesa requiere aguja gruesa.
@@ -191,7 +255,7 @@ export function Module1() {
       </section>
 
       {/* Primer Muestrario */}
-      <section className="relative z-[60] bg-white py-32 px-6">
+      <section className="relative z-[60] bg-cream py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
             <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">03. Análisis</p>

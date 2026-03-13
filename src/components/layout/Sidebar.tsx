@@ -25,7 +25,7 @@ export function Sidebar() {
       {/* Mobile toggle button */}
       <button
         onClick={toggleSidebar}
-        className="fixed top-4 left-4 z-50 p-2 bg-cream rounded-md shadow-md lg:hidden text-dark hover:bg-mint transition-colors"
+        className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-md lg:hidden text-dark hover:bg-white transition-colors"
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
@@ -41,13 +41,13 @@ export function Sidebar() {
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed top-0 left-0 z-40 h-screen w-72 bg-cream border-r border-border transition-transform duration-300 ease-in-out lg:translate-x-0 flex flex-col",
+          "fixed top-0 left-0 z-40 h-screen w-72 bg-white border-r border-border transition-transform duration-300 ease-in-out lg:translate-x-0 flex flex-col",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
         {/* Logo Area */}
         <div className="p-6  border-b border-border flex items-center justify-center">
-          <img src="/logo.png" alt="Veinte Studio Logo" className="h-16 object-contain invert" />
+          <img src="/logodos.png" alt="Veinte Studio Logo" className="h-16 object-contain invert" />
         </div>
 
         {/* Navigation Links */}
@@ -62,7 +62,7 @@ export function Sidebar() {
                   cn(
                     "sidebar-item flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
                     isActive
-                      ? "bg-mint text-dark shadow-sm"
+                      ? "bg-dark/95 text-white shadow-sm"
                       : "text-muted-foreground hover:bg-white/60 hover:text-dark"
                   )
                 }
