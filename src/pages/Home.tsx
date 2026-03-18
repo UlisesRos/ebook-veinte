@@ -14,18 +14,9 @@ export function Home() {
       </p>
 
       {/* Main title */}
-      <h1
-        className="font-display text-dark text-center"
-        style={{
-          fontSize: 'clamp(4.5rem, 15vw, 9rem)',
-          fontWeight: 400,
-          lineHeight: 1,
-          letterSpacing: '-0.01em',
-          marginBottom: '1.4rem',
-        }}
-      >
-        WEBBOOK
-      </h1>
+      <div className="p-6 flex items-center justify-center">
+        <img src="/logo.png" alt="Veinte Studio Logo" className="h-24 object-contain invert" />
+      </div>
 
       {/* Subtitle */}
       <p

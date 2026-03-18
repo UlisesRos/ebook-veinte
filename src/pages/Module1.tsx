@@ -317,8 +317,8 @@ export function Module1() {
                     </p>
                   </div>
                 </div>
-                <div className="absolute bottom-4 right-5">
-                  <span className="font-display text-3xl md:text-5xl text-dark/8 select-none leading-none">{card.num}</span>
+                <div className="absolute top-4 right-5">
+                  <span className="font-display text-4xl md:text-5xl text-dark/8 select-none leading-none">{card.num}</span>
                 </div>
               </div>
             ))}
@@ -403,7 +403,7 @@ export function Module1() {
                 { text: 'Accionar la máquina hasta que la bobina se llene.', img: '/bobina-5.png' },
               ].map((step, i) => (
                 <div key={i} className={`flex items-center gap-6 py-5 border-b border-border/30 ${i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className="w-24 h-24 shrink-0 overflow-hidden">
+                  <div className="w-30 h-30 shrink-0 overflow-hidden">
                     <img src={step.img} alt={step.text} className="w-full h-full object-cover" />
                   </div>
                   <span className="font-body text-base text-dark leading-relaxed">{step.text}</span>
