@@ -318,7 +318,7 @@ export function Module1() {
                   </div>
                 </div>
                 <div className="absolute bottom-4 right-5">
-                  <span className="font-display text-5xl text-dark/8 select-none leading-none">{card.num}</span>
+                  <span className="font-display text-3xl md:text-5xl text-dark/8 select-none leading-none">{card.num}</span>
                 </div>
               </div>
             ))}
