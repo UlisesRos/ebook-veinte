@@ -349,7 +349,7 @@ export function Module1() {
             <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-dark font-body text-center">
               Enhebrado del hilo superior
             </h4>
-            <ol className="max-w-sm mx-auto space-y-0">
+            <ol>
               {[
                 'Colocar el carrete de hilo en el portacarrete.',
                 'Pasar el hilo por las guías indicadas en la máquina.',
