@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, Menu, X, Scissors } from 'lucide-react';
+import { Home, Menu, X, Scissors, ChevronDown } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [module1Open, setModule1Open] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    // Close sidebar on mobile when navigating
     setIsOpen(false);
   }, [location]);
 
-  const toggleSidebar = () => setIsOpen(!isOpen);
+  // Auto-expand if we're on a module1 route
+  useEffect(() => {
+    if (location.pathname.startsWith('/module1')) {
+      setModule1Open(true);
+    }
+  }, [location.pathname]);
 
-  const links = [
-    { to: '/', label: 'Inicio', icon: Home },
-    { to: '/module1', label: 'Módulo I: Costura Inicial', icon: Scissors },
-    { to: '/module2', label: 'Módulo II: Técnicas Fundamentales', icon: Scissors },
-  ];
+  const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
     <>
@@ -46,32 +47,94 @@ export function Sidebar() {
         )}
       >
         {/* Logo Area */}
-        <div className="p-6  border-b border-border flex items-center justify-center">
+        <div className="p-6 border-b border-border flex items-center justify-center">
           <img src="/logodos.png" alt="Veinte Studio Logo" className="h-16 object-contain invert" />
         </div>
 
         {/* Navigation Links */}
         <nav className="flex-1 overflow-y-auto py-6 px-4 space-y-2">
-          {links.map((link) => {
-            const Icon = link.icon;
-            return (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  cn(
-                    "sidebar-item flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
-                    isActive
-                      ? "bg-dark/95 text-white shadow-sm"
-                      : "text-muted-foreground hover:bg-white/60 hover:text-dark"
-                  )
-                }
-              >
-                <Icon size={18} />
-                <span className="font-body">{link.label}</span>
-              </NavLink>
-            );
-          })}
+
+          {/* Inicio */}
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              cn(
+                "sidebar-item flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                isActive
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )
+            }
+          >
+            <Home size={18} />
+            <span className="font-body">Inicio</span>
+          </NavLink>
+
+          {/* Módulo I — collapsible group */}
+          <div>
+            <button
+              onClick={() => setModule1Open((v) => !v)}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                location.pathname.startsWith('/module1')
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )}
+            >
+              <Scissors size={18} className="shrink-0" />
+              <span className="font-body flex-1 text-left">Módulo I: Costura Inicial</span>
+              <ChevronDown
+                size={14}
+                className={cn(
+                  "shrink-0 transition-transform duration-200",
+                  module1Open ? "rotate-180" : "rotate-0"
+                )}
+              />
+            </button>
+
+            {/* Sub-items */}
+            <div
+              className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                module1Open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              )}
+            >
+              <div className="pl-4 pt-1 space-y-1">
+                {/* Go to module1 page */}
+                <NavLink
+                  to="/module1"
+                  end
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Teoría</span>
+                </NavLink>
+
+                {/* Práctica Módulo I */}
+                <NavLink
+                  to="/module1/practica"
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Práctica</span>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
         </nav>
 
         {/* Footer Area */}

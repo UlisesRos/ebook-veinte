@@ -14,7 +14,13 @@ export function Home() {
       </p>
 
       {/* Main title */}
-      <div className="p-6 flex items-center justify-center">
+      <h1
+        className="font-display text-dark text-center text-5xl uppercase  leading-snug"
+      >
+        Bienvenidos <br /> a
+      </h1>
+
+      <div className="pb-8 flex items-center justify-center">
         <img src="/logo.png" alt="Veinte Studio Logo" className="h-24 object-contain invert" />
       </div>
 
