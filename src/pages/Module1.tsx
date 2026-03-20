@@ -183,8 +183,8 @@ export function Module1() {
 
       {/* Full width image breaker */}
       <section className="relative z-[35] bg-cream py-12 px-6 pt-0">
-        <div className="max-w-6xl mx-auto w-full h-80 md:h-[120vh] overflow-hidden">
-          <img src="/maquina1.png" alt="Textura de tela" className="w-full h-full object-cover grayscale" />
+        <div className="max-w-6xl mx-auto w-full h-80 md:h-[90vh] overflow-hidden">
+          <img src="/maquina1.jpg" alt="Textura de tela" className="w-full h-full object-cover" />
         </div>
       </section>
 
