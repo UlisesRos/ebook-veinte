@@ -214,7 +214,7 @@ export function Module1Practica() {
                   >
                     01
                   </span>
-                  <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 2</p>
+                  <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 1</p>
                   <h3 className="font-display text-xl text-dark leading-snug">
                     Cortar en tela doble
                   </h3>
