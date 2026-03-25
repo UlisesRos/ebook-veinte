@@ -747,10 +747,12 @@ export function Module1() {
       {/* Botón flotante — volver al índice */}
       <a
         href="#indice"
-        className="fixed bottom-6 right-6 z-[100] w-10 h-10 bg-dark text-white rounded-full flex items-center justify-center shadow-lg hover:bg-dark/70 transition-colors"
-        title="Volver al índice"
+        className="fixed bottom-6 right-6 z-[100] group flex items-center gap-0 bg-dark text-cream rounded-full shadow-lg h-10 px-3 transition-all duration-300"
       >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <span className="text-xs font-bold uppercase tracking-widest text-cream whitespace-nowrap overflow-hidden max-w-0 opacity-0 group-hover:max-w-[160px] group-hover:opacity-100 group-hover:mr-2 transition-all duration-300">
+          Volver al índice
+        </span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
           <path d="M3 4h10M3 8h7M3 12h5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
       </a>

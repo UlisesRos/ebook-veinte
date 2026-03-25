@@ -430,6 +430,20 @@ export function Module1Practica() {
       </section>
 
       {/* ── MODAL DIAGRAMA ── */}
+      {/* Botón flotante — volver al inicio */}
+      <a
+        href="#"
+        onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+        className="fixed bottom-6 right-6 z-[100] group flex items-center gap-0 bg-dark text-cream rounded-full shadow-lg h-10 px-3 transition-all duration-300"
+      >
+        <span className="text-xs font-bold uppercase tracking-widest text-cream whitespace-nowrap overflow-hidden max-w-0 opacity-0 group-hover:max-w-[160px] group-hover:opacity-100 group-hover:mr-2 transition-all duration-300">
+          Volver al inicio
+        </span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
+          <path d="M3 4h10M3 8h7M3 12h5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      </a>
+
       {diagramOpen && (
         <div
           className="fixed inset-0 z-[200] flex items-center justify-center"

@@ -6,16 +6,20 @@ import { cn } from '../../lib/utils';
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [module1Open, setModule1Open] = useState(false);
+  const [module2Open, setModule2Open] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
-  // Auto-expand if we're on a module1 route
+  // Auto-expand si estamos en una ruta de módulo
   useEffect(() => {
     if (location.pathname.startsWith('/module1')) {
       setModule1Open(true);
+    }
+    if (location.pathname.startsWith('/module2')) {
+      setModule2Open(true);
     }
   }, [location.pathname]);
 
@@ -120,6 +124,68 @@ export function Sidebar() {
                 {/* Práctica Módulo I */}
                 <NavLink
                   to="/module1/practica"
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Práctica</span>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
+          {/* Módulo II — collapsible group */}
+          <div>
+            <button
+              onClick={() => setModule2Open((v) => !v)}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                location.pathname.startsWith('/module2')
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )}
+            >
+              <Scissors size={18} className="shrink-0" />
+              <span className="font-body flex-1 text-left">Módulo II: Técnicas Fundamentales</span>
+              <ChevronDown
+                size={14}
+                className={cn(
+                  "shrink-0 transition-transform duration-200",
+                  module2Open ? "rotate-180" : "rotate-0"
+                )}
+              />
+            </button>
+
+            {/* Sub-items */}
+            <div
+              className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                module2Open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              )}
+            >
+              <div className="pl-4 pt-1 space-y-1">
+                <NavLink
+                  to="/module2"
+                  end
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Teoría</span>
+                </NavLink>
+
+                <NavLink
+                  to="/module2/practica"
                   className={({ isActive }) =>
                     cn(
                       "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
