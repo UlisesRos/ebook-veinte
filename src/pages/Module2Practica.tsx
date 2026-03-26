@@ -118,7 +118,7 @@ export function Module2Practica() {
               left: '50%',
               transform: 'translateX(-50%) rotate(-2deg)',
               width: '130%',
-              height: '57%',
+              height: '50%',
               borderRadius: '10px',
               overflow: 'hidden',
               zIndex: 2,
@@ -137,7 +137,7 @@ export function Module2Practica() {
           <div
             style={{
               position: 'absolute',
-              bottom: 0,
+              bottom: -17,
               left: '50%',
               transform: 'translateX(-50%) rotate(2deg)',
               width: '130%',
