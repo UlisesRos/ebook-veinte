@@ -100,49 +100,59 @@ export function Module2Practica() {
           />
         </div>
 
-        {/* Two SVG frames */}
+        {/* Two stacked frames — vertical overlap */}
         <div
           style={{
             position: 'relative',
-            width: 'min(88vw, 580px)',
-            height: 'clamp(260px, 50vw, 440px)',
+            width: 'min(75vw, 380px)',
+            height: 'clamp(360px, 72vw, 520px)',
             flexShrink: 0,
             marginTop: '-2vh',
           }}
         >
-          {/* Marco izquierdo — mantel1.jpg */}
+          {/* Marco superior — mantel3.png */}
           <div
             style={{
-              position: 'absolute', left: 0, top: '50%',
-              transform: 'translateY(-50%) rotate(-2deg)',
-              width: '52%', height: '90%',
-              background: 'white', borderRadius: '10px', padding: '7px',
-              outline: '1px solid hsl(var(--border))', zIndex: 1, overflow: 'hidden',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
+              position: 'absolute',
+              top: 0,
+              left: '50%',
+              transform: 'translateX(-50%) rotate(-2deg)',
+              width: '130%',
+              height: '57%',
+              borderRadius: '10px',
+              overflow: 'hidden',
+              zIndex: 2,
+              boxShadow: '0 4px 28px rgba(0,0,0,0.10)',
+              outline: '1px solid hsl(var(--border))',
             }}
           >
             <img
-              src="/mantel1.jpg"
+              src="/mantel1.png"
               alt="Mantel 1"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
 
-          {/* Marco derecho — mantel2.jpg */}
+          {/* Marco inferior — mantel4.png */}
           <div
             style={{
-              position: 'absolute', right: 0, top: '50%',
-              transform: 'translateY(-50%) rotate(2deg)',
-              width: '52%', height: '90%',
-              background: 'white', borderRadius: '10px', padding: '7px',
-              outline: '1px solid hsl(var(--border))', zIndex: 2, overflow: 'hidden',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.09)',
+              position: 'absolute',
+              bottom: 0,
+              left: '50%',
+              transform: 'translateX(-50%) rotate(2deg)',
+              width: '130%',
+              height: '57%',
+              borderRadius: '10px',
+              overflow: 'hidden',
+              zIndex: 1,
+              boxShadow: '0 6px 32px rgba(0,0,0,0.13)',
+              outline: '1px solid hsl(var(--border))',
             }}
           >
             <img
-              src="/mantel2.jpg"
+              src="/mantel2.png"
               alt="Mantel 2"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
         </div>

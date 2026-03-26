@@ -1,27 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Home, Menu, X, Scissors, ChevronDown } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 export function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [module1Open, setModule1Open] = useState(false);
-  const [module2Open, setModule2Open] = useState(false);
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [module1Open, setModule1Open] = useState(() => location.pathname.startsWith('/module1'));
+  const [module2Open, setModule2Open] = useState(() => location.pathname.startsWith('/module2'));
+  const [prevLocation, setPrevLocation] = useState(location);
 
-  useEffect(() => {
+  // Derived state during render (React-approved pattern — no useEffect needed)
+  if (prevLocation !== location) {
+    setPrevLocation(location);
     setIsOpen(false);
-  }, [location]);
-
-  // Auto-expand si estamos en una ruta de módulo
-  useEffect(() => {
-    if (location.pathname.startsWith('/module1')) {
-      setModule1Open(true);
-    }
-    if (location.pathname.startsWith('/module2')) {
-      setModule2Open(true);
-    }
-  }, [location.pathname]);
+    if (location.pathname.startsWith('/module1')) setModule1Open(true);
+    if (location.pathname.startsWith('/module2')) setModule2Open(true);
+  }
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
