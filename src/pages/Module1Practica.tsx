@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const WORD = 'TOTEBAG';
+const WORD = 'BOLSO';
 const TYPE_SPEED  = 120;
 const ERASE_SPEED = 70;
 
