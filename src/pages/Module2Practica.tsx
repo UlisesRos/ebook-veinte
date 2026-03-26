@@ -110,7 +110,7 @@ export function Module2Practica() {
             marginTop: '-2vh',
           }}
         >
-          {/* Marco izquierdo — vista superior del mantel con volados */}
+          {/* Marco izquierdo — mantel1.jpg */}
           <div
             style={{
               position: 'absolute', left: 0, top: '50%',
@@ -121,34 +121,14 @@ export function Module2Practica() {
               boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
             }}
           >
-            <svg
-              style={{ width: '100%', height: '100%', display: 'block' }}
-              viewBox="0 0 200 250"
-              fill="none"
-              stroke="#1a1a1a"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect width="200" height="250" fill="#F5F0E8" stroke="none" />
-              <rect x="38" y="90" width="124" height="74" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.5" />
-              {[8, 13, 18, 23, 28, 33].map((x) => (
-                <path key={`vl-${x}`} d={`M${x} 84 Q${x + 2} 95 ${x} 106 Q${x - 2} 117 ${x} 128 Q${x + 2} 139 ${x} 150 Q${x - 2} 161 ${x} 170`} stroke="#1a1a1a" strokeWidth="1" fill="none" />
-              ))}
-              <line x1="38" y1="90" x2="6" y2="84" stroke="#1a1a1a" strokeWidth="1" />
-              <line x1="38" y1="164" x2="6" y2="170" stroke="#1a1a1a" strokeWidth="1" />
-              <path d="M6 84 Q4 127 6 170" stroke="#1a1a1a" strokeWidth="1.2" fill="none" />
-              {[167, 172, 177, 182, 187, 192].map((x) => (
-                <path key={`vr-${x}`} d={`M${x} 84 Q${x + 2} 95 ${x} 106 Q${x - 2} 117 ${x} 128 Q${x + 2} 139 ${x} 150 Q${x - 2} 161 ${x} 170`} stroke="#1a1a1a" strokeWidth="1" fill="none" />
-              ))}
-              <line x1="162" y1="90" x2="194" y2="84" stroke="#1a1a1a" strokeWidth="1" />
-              <line x1="162" y1="164" x2="194" y2="170" stroke="#1a1a1a" strokeWidth="1" />
-              <path d="M194 84 Q196 127 194 170" stroke="#1a1a1a" strokeWidth="1.2" fill="none" />
-              <rect x="44" y="96" width="112" height="62" fill="none" stroke="#1a1a1a" strokeWidth="0.5" strokeDasharray="3 3" />
-            </svg>
+            <img
+              src="/mantel1.jpg"
+              alt="Mantel 1"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px' }}
+            />
           </div>
 
-          {/* Marco derecho — perspectiva del mantel sobre mesa */}
+          {/* Marco derecho — mantel2.jpg */}
           <div
             style={{
               position: 'absolute', right: 0, top: '50%',
@@ -159,31 +139,11 @@ export function Module2Practica() {
               boxShadow: '0 4px 24px rgba(0,0,0,0.09)',
             }}
           >
-            <svg
-              style={{ width: '100%', height: '100%', display: 'block' }}
-              viewBox="0 0 200 250"
-              fill="none"
-              stroke="#1a1a1a"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect width="200" height="250" fill="#F5F0E8" stroke="none" />
-              <path d="M20 160 L180 160 L190 200 L10 200 Z" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.2" />
-              <rect x="30" y="60" width="140" height="100" fill="#E8E2D4" stroke="#1a1a1a" strokeWidth="1.5" />
-              <path d="M30 160 Q20 165 10 200" stroke="#1a1a1a" strokeWidth="1.2" fill="none" />
-              <path d="M170 160 Q180 165 190 200" stroke="#1a1a1a" strokeWidth="1.2" fill="none" />
-              {[12, 20, 28, 36, 44, 52, 60, 68, 76, 84, 92, 100, 108, 116, 124, 132, 140, 148, 156, 164, 172, 180, 188].map((x, i) => {
-                const yTop = 160, yBot = 196;
-                const curve = i % 2 === 0 ? 2 : -2;
-                return <path key={`f-${x}`} d={`M${x} ${yTop} Q${x + curve} ${(yTop + yBot) / 2} ${x} ${yBot}`} stroke="#1a1a1a" strokeWidth="0.7" fill="none" />;
-              })}
-              <line x1="30" y1="160" x2="170" y2="160" stroke="#1a1a1a" strokeWidth="1.8" />
-              <line x1="36" y1="155" x2="164" y2="155" stroke="#1a1a1a" strokeWidth="0.6" strokeDasharray="4 3" />
-              {[60, 100, 140].map((x) => (
-                <path key={`p-${x}`} d={`M${x} 65 Q${x + 4} 110 ${x} 155`} stroke="#1a1a1a" strokeWidth="0.5" fill="none" opacity="0.4" />
-              ))}
-            </svg>
+            <img
+              src="/mantel2.jpg"
+              alt="Mantel 2"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px' }}
+            />
           </div>
         </div>
       </div>
