@@ -1,7 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
+import { useEbookAccess } from '../../hooks/useEbookAccess';
+import { EmailGate } from '../EmailGate';
 
 export function Layout() {
+  const { hasAccess, grantAccess } = useEbookAccess();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  // Mostrar gate solo en páginas de módulos (no en Home)
+  const showGate = !isHome && !hasAccess;
+
   return (
     <div className="min-h-screen bg-white flex">
       <Sidebar />
@@ -11,6 +20,8 @@ export function Layout() {
           <Outlet />
         </div>
       </main>
+
+      {showGate && <EmailGate onAccess={grantAccess} />}
     </div>
   );
 }
