@@ -58,6 +58,7 @@ export function Module4Practica() {
 
   const materiales = [
     'Tela con cuerpo — lona, gabardina de algodón, gabardina acrílica, cordura, nobuk',
+    'Interior: Silver',
     'Hilo del color de la tela',
     'Cierre + tira cierre',
     'Bies para terminaciones',
@@ -248,7 +249,7 @@ export function Module4Practica() {
                 <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 1</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Marcar y cortar en tela doble</h3>
                 <div className="space-y-2 pt-1">
-                  <p className="font-body text-sm text-dark/70 leading-relaxed">Colocar el medio molde sobre la tela doblada. Marcar y cortar. Se obtienen 2 piezas idénticas en un solo corte.</p>
+                  <p className="font-body text-sm text-dark/70 leading-relaxed">Colocar el medio molde sobre la tela doblada. Marcar y cortar. Se obtienen 2 piezas idénticas en un solo corte. Realizar procedimiento en tela frente y en interior (silver).</p>
                 </div>
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -269,10 +270,52 @@ export function Module4Practica() {
                 </div>
               </div>
 
-              {/* Paso 2 */}
+              {/* Paso 2 — NUEVO */}
               <div className="pt-0 space-y-4 text-center">
                 <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>02</span>
                 <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 2</p>
+                <h3 className="font-display text-xl text-dark leading-snug">Unir tela frente y silver</h3>
+                <div className="space-y-2 pt-1">
+                  <p className="font-body text-sm text-dark/70 leading-relaxed">Coser ambos recortes (tela frente y silver) enfrentados, dejando las caras internas hacia afuera, para obtener una sola pieza unida.</p>
+                </div>
+                <div className="w-full overflow-hidden pt-6">
+                  <svg width="100%" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Pieza tela frente */}
+                    <path d="M 20,185 L 20,95 Q 20,65 75,65 Q 130,65 130,95 L 130,185 Z" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.5" />
+                    <text x="75" y="140" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif">tela frente</text>
+
+                    {/* Símbolo + */}
+                    <text x="160" y="132" textAnchor="middle" fontSize="20" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.4">+</text>
+
+                    {/* Pieza silver */}
+                    <path d="M 190,185 L 190,95 Q 190,65 245,65 Q 300,65 300,95 L 300,185 Z" fill="#C8C8C8" stroke="#1a1a1a" strokeWidth="1.5" />
+                    {/* Trama para indicar silver */}
+                    {[200, 215, 230, 245, 260, 275, 290].map((x) => (
+                      <line key={x} x1={x} y1="75" x2={x} y2="180" stroke="#1a1a1a" strokeWidth="0.4" opacity="0.25" />
+                    ))}
+                    <text x="245" y="140" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif">silver</text>
+
+                    {/* Línea de costura lateral en ambas piezas */}
+                    <line x1="125" y1="100" x2="125" y2="180" stroke="#1a1a1a" strokeWidth="1.2" strokeDasharray="3 2" />
+                    <line x1="195" y1="100" x2="195" y2="180" stroke="#1a1a1a" strokeWidth="1.2" strokeDasharray="3 2" />
+
+                    {/* Flecha de unión */}
+                    <defs>
+                      <marker id="arrowUnir" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                        <path d="M0,0 L6,3 L0,6 Z" fill="#1a1a1a"/>
+                      </marker>
+                    </defs>
+
+                    {/* Etiqueta costura */}
+                    <text x="160" y="192" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.5">costura de unión · 1 cm de margen</text>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Paso 3 (antes Paso 2) */}
+              <div className="pt-0 space-y-4 text-center">
+                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>03</span>
+                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 3</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Coser bies en la parte curva</h3>
                 <div className="space-y-2 pt-1">
                   <p className="font-body text-sm text-dark/70 leading-relaxed">Cubrir el borde curvo superior con bies, cosiendo prolijo. Doblez hacia el bies. El bies abraza la curva y da terminación limpia.</p>
@@ -293,10 +336,10 @@ export function Module4Practica() {
                 </div>
               </div>
 
-              {/* Paso 3 */}
+              {/* Paso 4 (antes Paso 3) */}
               <div className="pt-0 space-y-4 text-center">
-                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>03</span>
-                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 3</p>
+                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>04</span>
+                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 4</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Coser un lado del cierre al bies</h3>
                 <div className="space-y-2 pt-1">
                   <p className="font-body text-sm text-dark/70 leading-relaxed">Coser uno de los lados del cierre sobre el bies ya aplicado. Solo un lado por ahora.</p>
@@ -321,10 +364,10 @@ export function Module4Practica() {
                 </div>
               </div>
 
-              {/* Paso 4 */}
+              {/* Paso 5 (antes Paso 4) */}
               <div className="pt-0 space-y-4 text-center">
-                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>04</span>
-                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 4</p>
+                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>05</span>
+                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 5</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Colocar el deslizador del cierre</h3>
                 <div className="space-y-2 pt-1">
                   <p className="font-body text-sm text-dark/70 leading-relaxed">Pasar el deslizador (cabezal del cierre) del lado derecho de la tela, antes de unir el segundo lado.</p>
@@ -355,10 +398,10 @@ export function Module4Practica() {
                 </div>
               </div>
 
-              {/* Paso 5 */}
+              {/* Paso 6 (antes Paso 5) */}
               <div className="pt-0 space-y-4 text-center">
-                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>05</span>
-                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 5</p>
+                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>06</span>
+                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 6</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Costura recta en la base</h3>
                 <div className="space-y-2 pt-1">
                   <p className="font-body text-sm text-dark/70 leading-relaxed">Con la tela al revés, hacer una costura recta en la base cerrando la parte inferior de la yerbera.</p>
@@ -381,10 +424,10 @@ export function Module4Practica() {
                 </div>
               </div>
 
-              {/* Paso 6 */}
+              {/* Paso 7 (antes Paso 6) */}
               <div className="pt-0 space-y-4 text-center">
-                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>06</span>
-                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 6</p>
+                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>07</span>
+                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 7</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Coser esquinas y aplicar bies</h3>
                 <div className="space-y-2 pt-1">
                   <p className="font-body text-sm text-dark/70 leading-relaxed">Cerrar las dos esquinas inferiores con costura recta. Cubrir esas costuras con bies para un acabado prolijo.</p>
@@ -409,10 +452,10 @@ export function Module4Practica() {
                 </div>
               </div>
 
-              {/* Paso 7 */}
+              {/* Paso 8 (antes Paso 7) */}
               <div className="pt-0 space-y-4 text-center">
-                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>07</span>
-                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 7</p>
+                <span className="font-display text-dark/30 select-none leading-none" style={{ fontSize: '2.5rem', fontWeight: 700 }}>08</span>
+                <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 8</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Dar vuelta y ajustar las esquinas</h3>
                 <div className="space-y-2 pt-1">
                   <p className="font-body text-sm text-dark/70 leading-relaxed">Pasar la pieza por la abertura del cierre para dar vuelta. Ajustar las esquinas con cuidado para que queden bien definidas.</p>
