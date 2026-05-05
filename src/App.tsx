@@ -7,6 +7,12 @@ import { Module3 } from './pages/Module3';
 import { Module3Practica } from './pages/Module3Practica';
 import { Module4 } from './pages/Module4';
 import { Module4Practica } from './pages/Module4Practica';
+import { Module5 } from './pages/Module5';
+import { Module5Practica } from './pages/Module5Practica';
+import { Module6 } from './pages/Module6';
+import { Module6Practica } from './pages/Module6Practica';
+import { Module7 } from './pages/Module7';
+import { Module7Practica } from './pages/Module7Practica';
 import { Module1Practica } from './pages/Module1Practica';
 import { Module2Practica } from './pages/Module2Practica';
 
@@ -24,6 +30,12 @@ function App() {
           <Route path="module3/practica" element={<Module3Practica />} />
           <Route path="module4" element={<Module4 />} />
           <Route path="module4/practica" element={<Module4Practica />} />
+          <Route path="module5" element={<Module5 />} />
+          <Route path="module5/practica" element={<Module5Practica />} />
+          <Route path="module6" element={<Module6 />} />
+          <Route path="module6/practica" element={<Module6Practica />} />
+          <Route path="module7" element={<Module7 />} />
+          <Route path="module7/practica" element={<Module7Practica />} />
         </Route>
       </Routes>
     </BrowserRouter>
