@@ -326,7 +326,7 @@ export function Module5Practica() {
                 <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 4</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Unir fuelles con costura recta</h3>
                 <div className="space-y-2 pt-1">
-                  <p className="font-body text-sm text-dark/70 leading-relaxed">Una vez cocidos los laterales y la base, pinchar los fuelles inferiores (cuadrado 8×8cm) y coser con costura recta para darle volumen al bolso.</p>
+                  <p className="font-body text-sm text-dark/70 leading-relaxed">Una vez cocidos los laterales y la base, cortar fuelles de 8×8cm y coser con costura recta para darle volumen al bolso.</p>
                 </div>
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 320 215" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -335,16 +335,16 @@ export function Module5Practica() {
                     {/* Esquina inferior izquierda — fuelle marcado */}
                     <rect x="80" y="122" width="38" height="38" fill="none" stroke="#1a1a1a" strokeWidth="1.2" strokeDasharray="4 2" />
                     {/* Diagonal del fuelle izq */}
-                    <line x1="80" y1="160" x2="118" y2="122" stroke="#1a1a1a" strokeWidth="1.5" />
+                    <line x1="80" y1="122" x2="118" y2="160" stroke="#1a1a1a" strokeWidth="1.5" />
                     {/* Esquina inferior derecha — fuelle marcado */}
                     <rect x="202" y="122" width="38" height="38" fill="none" stroke="#1a1a1a" strokeWidth="1.2" strokeDasharray="4 2" />
                     {/* Diagonal del fuelle der */}
-                    <line x1="240" y1="160" x2="202" y2="122" stroke="#1a1a1a" strokeWidth="1.5" />
+                    <line x1="240" y1="122" x2="202" y2="160" stroke="#1a1a1a" strokeWidth="1.5" />
                     {/* Labels fuelles — separados del borde de la figura */}
                     <text x="99" y="178" textAnchor="middle" fontSize="7" fill="#1a1a1a" fontFamily="sans-serif">fuelle 8×8</text>
                     <text x="221" y="178" textAnchor="middle" fontSize="7" fill="#1a1a1a" fontFamily="sans-serif">fuelle 8×8</text>
                     <text x="160" y="90" textAnchor="middle" fontSize="9" fill="#1a1a1a" fontFamily="sans-serif">base del bolso</text>
-                    <text x="160" y="200" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.5">pinchar y coser en diagonal</text>
+                    <text x="160" y="200" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.5">Cortar y coser en diagonal</text>
                   </svg>
                 </div>
               </div>
