@@ -5,7 +5,9 @@
       "Bash(npm run:*)",
       "Bash(npx skills *)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Usuario\\\\Desktop\\\\Ulises\\\\Proyectos-creados\\\\Ebook\" -Recurse)",
-      "Bash(Select-Object FullName)"
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Force)",
+      "Bash(Select-Object Name)"
     ]
   }
 }

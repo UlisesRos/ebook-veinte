@@ -303,7 +303,7 @@ export function Module8Practica() {
                 <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 4</p>
                 <h3 className="font-display text-xl text-dark leading-snug">Pasar tira cierre</h3>
                 <p className="font-body text-sm text-dark/70 leading-relaxed">
-                  Pasar la tira cierre por el cierre. Recordá siempre que el cierre y la tira cierre tienen que ser de la misma medida.
+                  Pasar tira cierre por el cierre. Recordá siempre que el cierre y tira cierre tienen que ser de la misma medida.
                 </p>
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 320 120" fill="none">
@@ -353,15 +353,23 @@ export function Module8Practica() {
                   Calcular la mitad del molde y realizar piquetes para que luego nos quede centrado el cierre con la pieza.
                 </p>
                 <div className="w-full overflow-hidden pt-6">
-                  <svg width="100%" viewBox="0 0 320 160" fill="none">
-                    <rect x="30" y="20" width="260" height="100" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.5" />
-                    {/* Línea centro */}
-                    <line x1="160" y1="20" x2="160" y2="120" stroke="#1a1a1a" strokeWidth="1" strokeDasharray="4 3" opacity="0.5" />
-                    {/* Piquetes en los laterales */}
-                    <line x1="30" y1="70" x2="44" y2="70" stroke="#1a1a1a" strokeWidth="2" />
-                    <line x1="276" y1="70" x2="290" y2="70" stroke="#1a1a1a" strokeWidth="2" />
-                    <text x="160" y="75" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.5">mitad = 27cm</text>
-                    <text x="160" y="145" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.5">piquetes en laterales para centrar</text>
+                  <svg width="100%" viewBox="0 0 320 180" fill="none">
+                    {/* Medio molde */}
+                    <rect x="70" y="25" width="165" height="120" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.5" />
+                    {/* Borde izquierdo = línea de doblez (punteado) */}
+                    <line x1="70" y1="25" x2="70" y2="145" stroke="#1a1a1a" strokeWidth="1" strokeDasharray="5 3" opacity="0.35" />
+                    {/* Piquetes en esquinas del borde de doblez */}
+                    <line x1="55" y1="25" x2="70" y2="25" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" />
+                    <line x1="55" y1="145" x2="70" y2="145" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" />
+                    <text x="50" y="21" textAnchor="middle" fontSize="6.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.55">piquete</text>
+                    <text x="50" y="156" textAnchor="middle" fontSize="6.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.55">piquete</text>
+                    {/* Cierre en borde derecho */}
+                    <rect x="229" y="25" width="9" height="120" rx="1" fill="#1a1a1a" opacity="0.72" />
+                    <text x="250" y="88" textAnchor="start" fontSize="7" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.6">cierre</text>
+                    {/* Label */}
+                    <text x="148" y="88" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.45">medio molde</text>
+                    <text x="148" y="100" textAnchor="middle" fontSize="7" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.35">mitad = 27cm</text>
+                    <text x="160" y="170" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.4">piquetes en laterales para centrar</text>
                   </svg>
                 </div>
               </div>
@@ -476,14 +484,23 @@ export function Module8Practica() {
                 </p>
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 320 180" fill="none">
-                    <path d="M70,20 L250,20 L250,60 L290,60 L290,120 L250,120 L250,155 L70,155 L70,120 L30,120 L30,60 L70,60 Z"
-                      fill="#F5F0E8" stroke="none" />
-                    <path d="M70,20 L250,20 L250,60 L290,60 L290,120 L250,120 L250,155 L70,155 L70,120 L30,120 L30,60 L70,60 Z"
-                      fill="none" stroke="#1a1a1a" strokeWidth="7" opacity="0.25" />
-                    <path d="M70,20 L250,20 L250,60 L290,60 L290,120 L250,120 L250,155 L70,155 L70,120 L30,120 L30,60 L70,60 Z"
-                      fill="none" stroke="#1a1a1a" strokeWidth="1.5" />
-                    <text x="160" y="92" textAnchor="middle" fontSize="9" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.5">bies en todo el perímetro</text>
-                    <text x="160" y="170" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.4">terminación prolija · cubre todas las costuras</text>
+                    {/* Relleno de los fuelles */}
+                    <rect x="30" y="60" width="40" height="60" fill="#F5F0E8" />
+                    <rect x="250" y="60" width="40" height="60" fill="#F5F0E8" />
+                    {/* Fuelle izquierdo — 5 lados, abierto hacia el cierre (forma [) */}
+                    <path d="M70,20 L70,60 L30,60 L30,120 L70,120 L70,155"
+                      fill="none" stroke="#1a1a1a" strokeWidth="8" opacity="0.20" strokeLinejoin="miter" strokeLinecap="square" />
+                    <path d="M70,20 L70,60 L30,60 L30,120 L70,120 L70,155"
+                      fill="none" stroke="#1a1a1a" strokeWidth="1.5" strokeLinejoin="miter" />
+                    {/* Fuelle derecho — 5 lados, abierto hacia el cierre (forma ]) */}
+                    <path d="M250,20 L250,60 L290,60 L290,120 L250,120 L250,155"
+                      fill="none" stroke="#1a1a1a" strokeWidth="8" opacity="0.20" strokeLinejoin="miter" strokeLinecap="square" />
+                    <path d="M250,20 L250,60 L290,60 L290,120 L250,120 L250,155"
+                      fill="none" stroke="#1a1a1a" strokeWidth="1.5" strokeLinejoin="miter" />
+                    {/* Cierre — único elemento que une ambos fuelles */}
+                    <rect x="70" y="83" width="180" height="9" rx="1.5" fill="#1a1a1a" opacity="0.72" />
+                    <text x="160" y="91" textAnchor="middle" fontSize="6.5" fill="white" fontFamily="sans-serif">cierre</text>
+                    <text x="160" y="172" textAnchor="middle" fontSize="7.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.4">bies en bordes externos · cubre todas las costuras</text>
                   </svg>
                 </div>
               </div>
