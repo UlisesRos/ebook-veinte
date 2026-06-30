@@ -14,6 +14,7 @@ export function Sidebar() {
   const [module6Open, setModule6Open] = useState(() => location.pathname.startsWith('/module6'));
   const [module7Open, setModule7Open] = useState(() => location.pathname.startsWith('/module7'));
   const [module8Open, setModule8Open] = useState(() => location.pathname.startsWith('/module8'));
+  const [module9Open, setModule9Open] = useState(() => location.pathname.startsWith('/module9'));
   const [prevLocation, setPrevLocation] = useState(location);
 
   // Derived state during render (React-approved pattern — no useEffect needed)
@@ -28,6 +29,7 @@ export function Sidebar() {
     if (location.pathname.startsWith('/module6')) setModule6Open(true);
     if (location.pathname.startsWith('/module7')) setModule7Open(true);
     if (location.pathname.startsWith('/module8')) setModule8Open(true);
+    if (location.pathname.startsWith('/module9')) setModule9Open(true);
   }
 
   const toggleSidebar = () => setIsOpen(!isOpen);
@@ -554,6 +556,66 @@ export function Sidebar() {
                 </NavLink>
                 <NavLink
                   to="/module8/practica"
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Práctica</span>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
+          {/* Módulo IX — collapsible group */}
+          <div>
+            <button
+              onClick={() => setModule9Open((v) => !v)}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                location.pathname.startsWith('/module9')
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )}
+            >
+              <Scissors size={18} className="shrink-0" />
+              <span className="font-body flex-1 text-left">Módulo IX: Decoración</span>
+              <ChevronDown
+                size={14}
+                className={cn(
+                  "shrink-0 transition-transform duration-200",
+                  module9Open ? "rotate-180" : "rotate-0"
+                )}
+              />
+            </button>
+
+            <div
+              className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                module9Open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              )}
+            >
+              <div className="pl-4 pt-1 space-y-1">
+                <NavLink
+                  to="/module9"
+                  end
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Teoría</span>
+                </NavLink>
+                <NavLink
+                  to="/module9/practica"
                   className={({ isActive }) =>
                     cn(
                       "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
