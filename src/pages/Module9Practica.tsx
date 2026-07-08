@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { CarruselModulo9 } from '../components/CarruselModulo9';
 
 const WORD = 'ALMOHADÓN';
 const TYPE_SPEED  = 120;
@@ -575,6 +576,8 @@ export function Module9Practica() {
 
         </div>
       </section>
+
+      <CarruselModulo9 />
 
     </div>
   );

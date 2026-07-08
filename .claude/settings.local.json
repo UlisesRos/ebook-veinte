@@ -7,7 +7,10 @@
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Usuario\\\\Desktop\\\\Ulises\\\\Proyectos-creados\\\\Ebook\" -Recurse)",
       "Bash(Select-Object FullName)",
       "Bash(Get-ChildItem -Force)",
-      "Bash(Select-Object Name)"
+      "Bash(Select-Object Name)",
+      "Skill(impeccable)",
+      "Skill(impeccable:*)",
+      "Bash(node \"C:\\\\Users\\\\Usuario\\\\Desktop\\\\Ulises\\\\Proyectos-creados\\\\Ebook\\\\.claude\\\\skills\\\\impeccable\\\\scripts\\\\load-context.mjs\")"
     ]
   }
 }
