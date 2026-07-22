@@ -6,7 +6,7 @@ import { cn } from '../../lib/utils';
 export function Sidebar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [module1Open, setModule1Open] = useState(() => location.pathname.startsWith('/module1'));
+  const [module1Open, setModule1Open] = useState(() => location.pathname === '/module1' || location.pathname.startsWith('/module1/'));
   const [module2Open, setModule2Open] = useState(() => location.pathname.startsWith('/module2'));
   const [module3Open, setModule3Open] = useState(() => location.pathname.startsWith('/module3'));
   const [module4Open, setModule4Open] = useState(() => location.pathname.startsWith('/module4'));
@@ -15,13 +15,14 @@ export function Sidebar() {
   const [module7Open, setModule7Open] = useState(() => location.pathname.startsWith('/module7'));
   const [module8Open, setModule8Open] = useState(() => location.pathname.startsWith('/module8'));
   const [module9Open, setModule9Open] = useState(() => location.pathname.startsWith('/module9'));
+  const [module10Open, setModule10Open] = useState(() => location.pathname.startsWith('/module10'));
   const [prevLocation, setPrevLocation] = useState(location);
 
   // Derived state during render (React-approved pattern — no useEffect needed)
   if (prevLocation !== location) {
     setPrevLocation(location);
     setIsOpen(false);
-    if (location.pathname.startsWith('/module1')) setModule1Open(true);
+    if (location.pathname === '/module1' || location.pathname.startsWith('/module1/')) setModule1Open(true);
     if (location.pathname.startsWith('/module2')) setModule2Open(true);
     if (location.pathname.startsWith('/module3')) setModule3Open(true);
     if (location.pathname.startsWith('/module4')) setModule4Open(true);
@@ -30,6 +31,7 @@ export function Sidebar() {
     if (location.pathname.startsWith('/module7')) setModule7Open(true);
     if (location.pathname.startsWith('/module8')) setModule8Open(true);
     if (location.pathname.startsWith('/module9')) setModule9Open(true);
+    if (location.pathname.startsWith('/module10')) setModule10Open(true);
   }
 
   const toggleSidebar = () => setIsOpen(!isOpen);
@@ -90,7 +92,7 @@ export function Sidebar() {
               onClick={() => setModule1Open((v) => !v)}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
-                location.pathname.startsWith('/module1')
+                (location.pathname === '/module1' || location.pathname.startsWith('/module1/'))
                   ? "bg-dark/95 text-white shadow-sm"
                   : "text-muted-foreground hover:bg-white/60 hover:text-dark"
               )}
@@ -616,6 +618,66 @@ export function Sidebar() {
                 </NavLink>
                 <NavLink
                   to="/module9/practica"
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Práctica</span>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
+          {/* Módulo X — collapsible group */}
+          <div>
+            <button
+              onClick={() => setModule10Open((v) => !v)}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                location.pathname.startsWith('/module10')
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )}
+            >
+              <Scissors size={18} className="shrink-0" />
+              <span className="font-body flex-1 text-left">Módulo X: Márgenes de Costura</span>
+              <ChevronDown
+                size={14}
+                className={cn(
+                  "shrink-0 transition-transform duration-200",
+                  module10Open ? "rotate-180" : "rotate-0"
+                )}
+              />
+            </button>
+
+            <div
+              className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                module10Open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              )}
+            >
+              <div className="pl-4 pt-1 space-y-1">
+                <NavLink
+                  to="/module10"
+                  end
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Teoría</span>
+                </NavLink>
+                <NavLink
+                  to="/module10/practica"
                   className={({ isActive }) =>
                     cn(
                       "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
