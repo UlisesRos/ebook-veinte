@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -77,6 +78,10 @@ export function Module10() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Reveal del diagrama basado en scroll (no IntersectionObserver, que falla
+  // sobre elementos SVG en Safari). Observamos el <div> contenedor.
+  const [moldeRef, showMolde] = useRevealOnScroll<HTMLDivElement>();
 
   return (
     <div className="w-full font-body text-dark overflow-hidden bg-cream pb-32">
@@ -296,6 +301,7 @@ export function Module10() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
             {/* Diagrama: molde con línea de corte a 1cm */}
             <motion.div
+              ref={moldeRef}
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -309,8 +315,7 @@ export function Module10() {
                   x="34" y="34" width="232" height="212" rx="4"
                   fill="none" stroke="#1a1a1a" strokeWidth="1.1" strokeDasharray="6 4" opacity="0.55"
                   initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
+                  animate={showMolde ? { pathLength: 1 } : { pathLength: 0 }}
                   transition={{ duration: 1.1, ease, delay: 0.35 }}
                 />
                 {/* Molde base — sólido, interior */}
@@ -318,8 +323,7 @@ export function Module10() {
                   x="66" y="66" width="168" height="148" rx="2"
                   fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.6"
                   initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
+                  animate={showMolde ? { pathLength: 1 } : { pathLength: 0 }}
                   transition={{ duration: 1, ease }}
                 />
                 <text x="150" y="138" textAnchor="middle" fontSize="13" fontFamily="serif" fill="#1a1a1a">Molde</text>

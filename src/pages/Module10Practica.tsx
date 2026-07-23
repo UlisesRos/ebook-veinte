@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CarruselModulo10 } from '../components/CarruselModulo10';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 const WORD = 'CANASTA';
 const TYPE_SPEED = 130;
@@ -52,6 +53,10 @@ export function Module10Practica() {
   const [displayed, setDisplayed] = useState('');
   const [erasing, setErasing] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
+
+  // Reveal de la cruz basado en scroll (no IntersectionObserver, que falla sobre
+  // elementos SVG en Safari). Observamos el <div> contenedor.
+  const [crossRef, showCross] = useRevealOnScroll<HTMLDivElement>();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -181,7 +186,7 @@ export function Module10Practica() {
           </p>
 
           {/* SVG cruz — 5 cuadrados */}
-          <div className="w-full overflow-hidden bg-white" style={{ padding: '28px 16px', outline: '1px solid hsl(var(--border) / 0.5)' }}>
+          <div ref={crossRef} className="w-full overflow-hidden bg-white" style={{ padding: '28px 16px', outline: '1px solid hsl(var(--border) / 0.5)' }}>
             <svg
               viewBox="0 0 330 320"
               style={{ width: '100%', maxWidth: 430, height: 'auto', display: 'block', margin: '0 auto' }}
@@ -191,11 +196,9 @@ export function Module10Practica() {
               {CROSS.map((sq, i) => (
                 <motion.g
                   key={sq.key}
-                  initial={{ opacity: 0, scale: 0.6 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.5, delay: 0.1 + i * 0.11, ease }}
-                  style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
+                  initial={{ opacity: 0 }}
+                  animate={showCross ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.55, delay: 0.1 + i * 0.12, ease }}
                 >
                   <rect
                     x={sq.x}
@@ -237,8 +240,7 @@ export function Module10Practica() {
                   x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
                   stroke={ACCENT} strokeWidth="1.6" strokeDasharray="5 3"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 0.85 }}
-                  viewport={{ once: true }}
+                  animate={showCross ? { opacity: 0.85 } : { opacity: 0 }}
                   transition={{ duration: 0.5, delay: 0.75, ease }}
                 />
               ))}
