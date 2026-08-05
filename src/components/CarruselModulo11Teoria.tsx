@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const IMAGES = [
-  { src: '/modulo11/practica/horno.png', alt: 'Manopla de ondas rojas colgada de la puerta del horno' },
-  { src: '/modulo11/practica/maquillaje.png', alt: 'La misma manopla como organizador de brochas en el baño' },
-  { src: '/modulo11/practica/maquillaje2.png', alt: 'Manopla colgada de una barra con las brochas en su bolsillo' },
+  { src: '/modulo11/teoria/molde.png', alt: 'Manos trazando moldes sobre papel madera junto a una tijera de sastre' },
+  { src: '/modulo11/teoria/molde2.png', alt: 'Rollos de papel madera con moldes trazados' },
+  { src: '/modulo11/teoria/molde3.png', alt: 'Moldes colgados con el nombre de la pieza y la cantidad a cortar' },
+  { src: '/modulo11/teoria/molde4.png', alt: 'Moldes con sus especificaciones escritas y pesas para sujetarlos' },
 ] as const;
 
 const TOTAL = IMAGES.length;
@@ -24,7 +25,7 @@ function useVisibleCount(): number {
   return count;
 }
 
-export function CarruselModulo11() {
+export function CarruselModulo11Teoria() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -94,14 +95,14 @@ export function CarruselModulo11() {
             className="mb-12 text-center"
           >
             <p className="text-xs tracking-[0.2em] uppercase font-bold text-dark/40 mb-3">
-              04 — Galería
+              Registro visual
             </p>
             <h2
               className="font-display text-dark leading-tight"
               style={{ fontSize: 'clamp(2rem, 5.5vw, 3.6rem)', fontWeight: 400 }}
             >
-              La manopla<br />
-              <span className="italic">en detalle</span>
+              El proceso<br />
+              <span className="italic">en el taller</span>
             </h2>
           </motion.div>
 

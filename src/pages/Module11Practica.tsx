@@ -9,6 +9,8 @@ const ERASE_SPEED = 75;
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const ACCENT = '#9B4B57';
+const END_COLOR = '#3B6FE0';
+const SEAM_COLOR = '#E0227C';
 
 function MittenIcon({ size = 18 }: { size?: number }) {
   return (
@@ -136,7 +138,7 @@ export function Module11Practica() {
             }}
           >
             <img
-              src="/modulo11/maquillaje.png"
+              src="/modulo11/practica/maquillaje.png"
               alt="Manopla colgada de una barra del baño, con brochas en el bolsillo"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '5px' }}
             />
@@ -152,7 +154,7 @@ export function Module11Practica() {
             }}
           >
             <img
-              src="/modulo11/horno.png"
+              src="/modulo11/practica/horno.png"
               alt="La misma manopla colgada de la puerta del horno"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '5px' }}
             />
@@ -370,18 +372,18 @@ export function Module11Practica() {
                 </p>
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 330 150" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
-                    {/* Base */}
-                    <rect x="20" y="44" width="290" height="48" rx="18" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.5" />
-                    {/* Bolsillo izq */}
-                    <path d="M24 48 h70 v26 a14 14 0 0 1 -14 14 h-42 a14 14 0 0 1 -14 -14 z" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.3" />
-                    <line x1="24" y1="48" x2="94" y2="48" stroke={ACCENT} strokeWidth="3" strokeLinecap="round" />
-                    {/* Bolsillo der */}
-                    <path d="M236 48 h70 v26 a14 14 0 0 1 -14 14 h-42 a14 14 0 0 1 -14 -14 z" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.3" />
-                    <line x1="236" y1="48" x2="306" y2="48" stroke={ACCENT} strokeWidth="3" strokeLinecap="round" />
-                    {/* Costuras de fijación */}
-                    <path d="M24 52 v32 a12 12 0 0 0 12 12 h46" fill="none" stroke="#1a1a1a" strokeWidth="1.4" strokeDasharray="4 2.5" opacity="0.65" />
-                    <path d="M306 52 v32 a12 12 0 0 1 -12 12 h-46" fill="none" stroke="#1a1a1a" strokeWidth="1.4" strokeDasharray="4 2.5" opacity="0.65" />
-                    <text x="165" y="72" textAnchor="middle" fontSize="8.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.45">un bolsillo en cada extremo</text>
+                    {/* Extremos redondeados — el bolsillo de cada lado, remarcado en azul */}
+                    <rect x="20" y="44" width="112" height="48" rx="24" fill="#F5F0E8" stroke={END_COLOR} strokeWidth="2.6" />
+                    <rect x="198" y="44" width="112" height="48" rx="24" fill="#F5F0E8" stroke={END_COLOR} strokeWidth="2.6" />
+                    {/* Tramo central: tapa la curva sobrante de los extremos */}
+                    <rect x="78" y="44" width="174" height="48" fill="#F5F0E8" />
+                    <line x1="78" y1="44" x2="252" y2="44" stroke="#1a1a1a" strokeWidth="1.4" />
+                    <line x1="78" y1="92" x2="252" y2="92" stroke="#1a1a1a" strokeWidth="1.4" />
+                    {/* Costura que fija cada bolsillo a la base, marcada en rosa */}
+                    <line x1="78" y1="44" x2="78" y2="92" stroke={SEAM_COLOR} strokeWidth="4" strokeLinecap="round" />
+                    <line x1="252" y1="44" x2="252" y2="92" stroke={SEAM_COLOR} strokeWidth="4" strokeLinecap="round" />
+
+                    <text x="165" y="72" textAnchor="middle" fontSize="8.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.5">un bolsillo en cada extremo</text>
                     <text x="165" y="132" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.45">fijar con costura recta</text>
                   </svg>
                 </div>
@@ -397,15 +399,17 @@ export function Module11Practica() {
                 </p>
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 330 160" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
-                    {/* Manopla terminada */}
-                    <rect x="22" y="42" width="286" height="52" rx="20" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.4" />
-                    {/* Bies contorno */}
-                    <rect x="22" y="42" width="286" height="52" rx="20" fill="none" stroke={ACCENT} strokeWidth="3.4" />
-                    {/* Bolsillos */}
-                    <path d="M26 46 h68 v24 a14 14 0 0 1 -14 14 h-40 a14 14 0 0 1 -14 -14 z" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.1" />
-                    <line x1="26" y1="46" x2="94" y2="46" stroke={ACCENT} strokeWidth="2.6" strokeLinecap="round" />
-                    <path d="M236 46 h68 v24 a14 14 0 0 1 -14 14 h-40 a14 14 0 0 1 -14 -14 z" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.1" />
-                    <line x1="236" y1="46" x2="304" y2="46" stroke={ACCENT} strokeWidth="2.6" strokeLinecap="round" />
+                    {/* Extremos redondeados — bolsillo, remarcado en azul */}
+                    <rect x="22" y="42" width="112" height="52" rx="26" fill="#F5F0E8" stroke={END_COLOR} strokeWidth="2.6" />
+                    <rect x="196" y="42" width="112" height="52" rx="26" fill="#F5F0E8" stroke={END_COLOR} strokeWidth="2.6" />
+                    {/* Tramo central con bies — tapa la curva sobrante de los extremos */}
+                    <rect x="78" y="42" width="174" height="52" fill="#F5F0E8" />
+                    <line x1="78" y1="42" x2="252" y2="42" stroke={ACCENT} strokeWidth="3" />
+                    <line x1="78" y1="94" x2="252" y2="94" stroke={ACCENT} strokeWidth="3" />
+                    {/* Costura que fija cada bolsillo a la base, marcada en rosa */}
+                    <line x1="78" y1="42" x2="78" y2="94" stroke={SEAM_COLOR} strokeWidth="4" strokeLinecap="round" />
+                    <line x1="252" y1="42" x2="252" y2="94" stroke={SEAM_COLOR} strokeWidth="4" strokeLinecap="round" />
+
                     <text x="165" y="72" textAnchor="middle" fontSize="11" fill="#1a1a1a" fontFamily="serif">¡Manopla terminada!</text>
                     <text x="165" y="128" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.45">bies en todo el contorno, fijado con costura recta ♥</text>
                   </svg>

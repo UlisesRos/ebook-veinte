@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
+import { CarruselModulo11Teoria } from '../components/CarruselModulo11Teoria';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const ACCENT = '#9B4B57';
@@ -112,7 +113,7 @@ export function Module11() {
 
         <div className="relative w-full max-w-md mx-auto overflow-hidden" style={{ aspectRatio: '4/5' }}>
           <img
-            src="/modulo11/molde.png"
+            src="/modulo11/teoria/molde.png"
             alt="Manos trazando moldes sobre papel madera junto a una tijera de sastre"
             className="w-full h-full object-cover"
           />
@@ -536,25 +537,7 @@ export function Module11() {
         </div>
       </section>
 
-      {/* ── Imagen final ── */}
-      <section className="bg-cream px-6 pt-8 pb-4">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.99 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.75, ease }}
-            className="w-full overflow-hidden rounded-lg"
-            style={{ outline: '1px solid hsl(var(--border) / 0.4)' }}
-          >
-            <img
-              src="/modulo11/maquillaje2.png"
-              alt="Manopla de ondas rojas colgada de una barra, usada como organizador de brochas"
-              className="w-full h-auto object-contain block"
-            />
-          </motion.div>
-        </div>
-      </section>
+      <CarruselModulo11Teoria />
 
       {/* Floating back to top */}
       <button
