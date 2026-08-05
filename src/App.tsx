@@ -19,6 +19,8 @@ import { Module9 } from './pages/Module9';
 import { Module9Practica } from './pages/Module9Practica';
 import { Module10 } from './pages/Module10';
 import { Module10Practica } from './pages/Module10Practica';
+import { Module11 } from './pages/Module11';
+import { Module11Practica } from './pages/Module11Practica';
 import { Module1Practica } from './pages/Module1Practica';
 import { Module2Practica } from './pages/Module2Practica';
 
@@ -48,6 +50,8 @@ function App() {
           <Route path="module9/practica" element={<Module9Practica />} />
           <Route path="module10" element={<Module10 />} />
           <Route path="module10/practica" element={<Module10Practica />} />
+          <Route path="module11" element={<Module11 />} />
+          <Route path="module11/practica" element={<Module11Practica />} />
         </Route>
       </Routes>
     </BrowserRouter>
