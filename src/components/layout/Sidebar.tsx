@@ -18,6 +18,7 @@ export function Sidebar() {
   const [module10Open, setModule10Open] = useState(() => location.pathname.startsWith('/module10'));
   const [module11Open, setModule11Open] = useState(() => location.pathname.startsWith('/module11'));
   const [module12Open, setModule12Open] = useState(() => location.pathname.startsWith('/module12'));
+  const [module13Open, setModule13Open] = useState(() => location.pathname.startsWith('/module13'));
   const [prevLocation, setPrevLocation] = useState(location);
 
   // Derived state during render (React-approved pattern — no useEffect needed)
@@ -36,6 +37,7 @@ export function Sidebar() {
     if (location.pathname.startsWith('/module10')) setModule10Open(true);
     if (location.pathname.startsWith('/module11')) setModule11Open(true);
     if (location.pathname.startsWith('/module12')) setModule12Open(true);
+    if (location.pathname.startsWith('/module13')) setModule13Open(true);
   }
 
   const toggleSidebar = () => setIsOpen(!isOpen);
@@ -802,6 +804,66 @@ export function Sidebar() {
                 </NavLink>
                 <NavLink
                   to="/module12/practica"
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Práctica</span>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
+          {/* Módulo XIII — collapsible group */}
+          <div>
+            <button
+              onClick={() => setModule13Open((v) => !v)}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                location.pathname.startsWith('/module13')
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )}
+            >
+              <Scissors size={18} className="shrink-0" />
+              <span className="font-body flex-1 text-left">Módulo XIII: Composición de Telas</span>
+              <ChevronDown
+                size={14}
+                className={cn(
+                  "shrink-0 transition-transform duration-200",
+                  module13Open ? "rotate-180" : "rotate-0"
+                )}
+              />
+            </button>
+
+            <div
+              className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                module13Open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              )}
+            >
+              <div className="pl-4 pt-1 space-y-1">
+                <NavLink
+                  to="/module13"
+                  end
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Teoría</span>
+                </NavLink>
+                <NavLink
+                  to="/module13/practica"
                   className={({ isActive }) =>
                     cn(
                       "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",

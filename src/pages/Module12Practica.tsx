@@ -243,8 +243,8 @@ export function Module12Practica() {
 
                 {/* Anotación */}
                 <line x1="246" y1="98" x2="220" y2="90" stroke={ACCENT} strokeWidth="0.9" />
-                <text x="216" y="88" textAnchor="end" fontSize="8" fontFamily="sans-serif" fill={ACCENT}>fuelle inferior</text>
-                <text x="216" y="99" textAnchor="end" fontSize="8" fontFamily="sans-serif" fill={ACCENT} opacity="0.75">2 por bolso</text>
+                <text x="230" y="88" textAnchor="end" fontSize="8" fontFamily="sans-serif" fill={ACCENT}>fuelle inferior</text>
+                <text x="224" y="99" textAnchor="end" fontSize="8" fontFamily="sans-serif" fill={ACCENT} opacity="0.75">2 por bolso</text>
               </motion.g>
             </svg>
             <p className="text-center text-xs text-dark/45 italic mt-4">
@@ -499,7 +499,7 @@ export function Module12Practica() {
                   <svg width="100%" viewBox="0 0 330 150" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
                     <rect x="110" y="30" width="110" height="90" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.4" />
                     <line x1="110" y1="42" x2="220" y2="42" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="4 3" />
-                    <text x="165" y="34" textAnchor="middle" fontSize="8" fontFamily="sans-serif" fill={ACCENT} opacity="0.85">pespunte</text>
+                    <text x="165" y="38" textAnchor="middle" fontSize="8" fontFamily="sans-serif" fill={ACCENT} opacity="0.85">pespunte</text>
                     <text x="165" y="86" textAnchor="middle" fontSize="8.5" fontFamily="sans-serif" fill="#1a1a1a" opacity="0.5">une frente + forrería</text>
                     <text x="165" y="134" textAnchor="middle" fontSize="8" fontFamily="sans-serif" fill="#1a1a1a" opacity="0.45">acabado más prolijo</text>
                   </svg>
