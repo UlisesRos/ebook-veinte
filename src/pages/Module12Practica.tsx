@@ -294,16 +294,17 @@ export function Module12Practica() {
                 <h3 className="font-display text-xl text-dark leading-snug">{stepMeta[0].titulo}</h3>
                 <p className="font-body text-sm text-dark/70 leading-relaxed">{stepMeta[0].texto}</p>
                 <div className="w-full overflow-hidden pt-6">
-                  <svg width="100%" viewBox="0 0 330 175" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
-                    <rect x="20" y="18" width="150" height="34" rx="2" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.3" />
-                    <rect x="26" y="56" width="150" height="34" rx="2" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.3" opacity="0.85" />
-                    <text x="101" y="106" textAnchor="middle" fontSize="8.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.6">Rectángulo × 4</text>
-                    {[0, 1, 2, 3].map(k => (
-                      <rect key={k} x={20 + k * 34} y="124" width="26" height="26" rx="2" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.2" />
-                    ))}
-                    <text x="101" y="164" textAnchor="middle" fontSize="8.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.6">Cuadrado × 4</text>
-                    <text x="270" y="80" textAnchor="middle" fontSize="22" fill="#1a1a1a">✂</text>
-                    <text x="270" y="100" textAnchor="middle" fontSize="7.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.4">cortar en tela</text>
+                  <svg width="100%" viewBox="0 0 330 190" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
+                    <path
+                      d="M70,20 L250,20 L250,110 L200,110 L200,175 L120,175 L120,110 L70,110 Z"
+                      fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.5" strokeLinejoin="round"
+                    />
+                    <line x1="70" y1="110" x2="120" y2="110" stroke="#1a1a1a" strokeWidth="0.9" strokeDasharray="3 3" opacity="0.35" />
+                    <line x1="200" y1="110" x2="250" y2="110" stroke="#1a1a1a" strokeWidth="0.9" strokeDasharray="3 3" opacity="0.35" />
+                    <text x="160" y="60" textAnchor="middle" fontSize="9.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.65">Rectángulo × 4</text>
+                    <text x="160" y="146" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.65">Cuadrado × 4</text>
+                    <text x="290" y="64" textAnchor="middle" fontSize="22" fill="#1a1a1a">✂</text>
+                    <text x="290" y="84" textAnchor="middle" fontSize="7.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.4">cortar en tela</text>
                   </svg>
                 </div>
               </motion.div>
@@ -320,17 +321,27 @@ export function Module12Practica() {
                 <p className="font-body text-xs uppercase tracking-[0.2em] font-bold text-dark">Paso N° 2</p>
                 <h3 className="font-display text-xl text-dark leading-snug">{stepMeta[1].titulo}</h3>
                 <p className="font-body text-sm text-dark/70 leading-relaxed">{stepMeta[1].texto}</p>
-                <div className="w-full overflow-hidden pt-6">
-                  <svg width="100%" viewBox="0 0 330 140" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
-                    <rect x="30" y="40" width="90" height="60" rx="3" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.3" />
-                    <rect x="24" y="34" width="90" height="60" rx="3" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.4" opacity="0.9" />
-                    <text x="69" y="68" textAnchor="middle" fontSize="9" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.55">Frente × 2</text>
-                    <rect x="216" y="40" width="90" height="60" rx="3" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.3" />
-                    <rect x="210" y="34" width="90" height="60" rx="3" fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.4" opacity="0.9" />
-                    <text x="255" y="68" textAnchor="middle" fontSize="9" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.55">Interna × 2</text>
-                    <text x="165" y="120" textAnchor="middle" fontSize="8" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.45">a la máquina, de a dos</text>
-                  </svg>
+                <div className="grid grid-cols-2 gap-3 mt-6">
+                  <div className="overflow-hidden flex items-center justify-center">
+                    <svg width="100%" viewBox="0 0 150 110" fill="none" style={{ maxWidth: 160, display: 'block' }}>
+                      <path
+                        d="M25,10 L125,10 L125,55 L95,55 L95,90 L55,90 L55,55 L25,55 Z"
+                        fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.3" strokeLinejoin="round"
+                      />
+                      <text x="75" y="36" textAnchor="middle" fontSize="9.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.65">Frente × 2</text>
+                    </svg>
+                  </div>
+                  <div className="overflow-hidden flex items-center justify-center">
+                    <svg width="100%" viewBox="0 0 150 110" fill="none" style={{ maxWidth: 160, display: 'block' }}>
+                      <path
+                        d="M25,10 L125,10 L125,55 L95,55 L95,90 L55,90 L55,55 L25,55 Z"
+                        fill="#EDE8DC" stroke="#1a1a1a" strokeWidth="1.3" strokeLinejoin="round"
+                      />
+                      <text x="75" y="36" textAnchor="middle" fontSize="9.5" fill="#1a1a1a" fontFamily="sans-serif" opacity="0.65">Interna × 2</text>
+                    </svg>
+                  </div>
                 </div>
+                <p className="font-body text-xs text-dark/45 pt-1">a la máquina, de a dos</p>
               </motion.div>
 
               {/* Paso 3 */}
@@ -346,9 +357,14 @@ export function Module12Practica() {
                 <h3 className="font-display text-xl text-dark leading-snug">{stepMeta[2].titulo}</h3>
                 <p className="font-body text-sm text-dark/70 leading-relaxed">{stepMeta[2].texto}</p>
                 <div className="w-full overflow-hidden pt-6">
-                  <svg width="100%" viewBox="0 0 330 190" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
-                    <rect x="130" y="24" width="70" height="140" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.5" />
-                    <text x="165" y="100" textAnchor="middle" fontSize="10" fontFamily="serif" fill="#1a1a1a" opacity="0.5">Frente</text>
+                  <svg width="100%" viewBox="0 0 330 205" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
+                    <path
+                      d="M130,24 L200,24 L200,150 L180,150 L180,185 L150,185 L150,150 L130,150 Z"
+                      fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.5" strokeLinejoin="round"
+                    />
+                    <line x1="130" y1="150" x2="150" y2="150" stroke="#1a1a1a" strokeWidth="0.9" strokeDasharray="3 3" opacity="0.3" />
+                    <line x1="180" y1="150" x2="200" y2="150" stroke="#1a1a1a" strokeWidth="0.9" strokeDasharray="3 3" opacity="0.3" />
+                    <text x="165" y="90" textAnchor="middle" fontSize="10" fontFamily="serif" fill="#1a1a1a" opacity="0.5">Frente</text>
 
                     <line x1="118" y1="24" x2="126" y2="24" stroke="#1a1a1a" strokeWidth="0.9" />
                     <line x1="118" y1="48" x2="126" y2="48" stroke="#1a1a1a" strokeWidth="0.9" />
@@ -370,7 +386,7 @@ export function Module12Practica() {
                     <line x1="208" y1="48" x2="208" y2="56" stroke={ACCENT} strokeWidth="1.8" />
                     <text x="218" y="60" fontSize="8" fontFamily="sans-serif" fill={ACCENT}>2 cm</text>
 
-                    <text x="165" y="182" textAnchor="middle" fontSize="8" fill={ACCENT} fontFamily="sans-serif" opacity="0.8">marcar en ambos laterales superiores</text>
+                    <text x="165" y="197" textAnchor="middle" fontSize="8" fill={ACCENT} fontFamily="sans-serif" opacity="0.8">marcar en ambos laterales superiores</text>
                   </svg>
                 </div>
               </motion.div>

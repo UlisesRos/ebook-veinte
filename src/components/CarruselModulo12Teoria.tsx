@@ -4,7 +4,6 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const IMAGES = [
   { src: '/modulo12/prensatelas.png', alt: 'Infografía con los distintos tipos de prensatela y su uso' },
-  { src: '/modulo12/prensatelas1.jpg', alt: 'Prensatela metálica para ojales, vista de perfil' },
   { src: '/modulo12/prensatelas2.jpg', alt: 'Set de prensatelas y accesorios de costura junto a una cinta métrica' },
   { src: '/modulo12/prensatelas3.jpg', alt: 'Prensatela cosiendo una tela clara sobre la máquina' },
 ] as const;
