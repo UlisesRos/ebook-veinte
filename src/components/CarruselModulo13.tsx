@@ -7,6 +7,7 @@ const IMAGES = [
   { src: '/modulo13/practica2.jpg', alt: 'Cartuchera a rayas azules y blancas sobre una mesa con productos de maquillaje' },
   { src: '/modulo13/practica3.jpg', alt: 'Cartuchera a rayas rosas y marrones sobre una mesada de mármol' },
   { src: '/modulo13/practica4.jpg', alt: 'Cartuchera a rayas rosas y marrones junto a labiales y un espejo' },
+  { src: '/modulo13/practica5.jpg', alt: 'Cartuchera de lona crema con manchas marrones sobre una mesada de baño, junto a una brocha de afeitar y una toalla enrollada' },
 ] as const;
 
 const TOTAL = IMAGES.length;

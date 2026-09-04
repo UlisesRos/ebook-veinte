@@ -54,8 +54,8 @@ const stepMeta = [
   { titulo: 'Dar vuelta', texto: 'Dar vuelta la pieza para comenzar las costuras internas.' },
   { titulo: 'Marcar los centros', texto: 'Doblar a la mitad para buscar el centro de la pieza y marcar con pequeños piquetes, haciéndolos coincidir con el centro del cierre.' },
   { titulo: 'Coser los laterales', texto: 'Costura recta en ambos laterales.' },
-  { titulo: 'Colocar el bies', texto: 'Ya fijado, colocar bies.' },
   { titulo: 'Marcar el fuelle', texto: 'En sus 4 puntas, cortar el fuelle con cuadrados de 4 cm.' },
+  { titulo: 'Colocar el bies', texto: 'Ya fijado, colocar bies.' },
   { titulo: 'Coser el primer fuelle', texto: 'Hacer coincidir la costura del fuelle con el centro. Coser recto.' },
   { titulo: 'Repetir el fuelle', texto: 'Repetir el mismo procedimiento del otro lado.' },
   { titulo: 'Bies en los fuelles', texto: 'Colocar bies de ambos lados.' },
@@ -532,9 +532,11 @@ export function Module13Practica() {
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 330 190" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
                     <rect x="105" y="24" width="120" height="140" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.2" />
-                    <line x1="105" y1="24" x2="105" y2="164" stroke={BIES_COLOR} strokeWidth="4" strokeLinecap="round" />
-                    <line x1="225" y1="24" x2="225" y2="164" stroke={BIES_COLOR} strokeWidth="4" strokeLinecap="round" />
-                    <text x="165" y="184" textAnchor="middle" fontSize="8" fontFamily="sans-serif" fill={BIES_COLOR} opacity="0.85">bies cubriendo los laterales</text>
+                    <rect x="91" y="10" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
+                    <rect x="211" y="10" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
+                    <rect x="91" y="150" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
+                    <rect x="211" y="150" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
+                    <text x="165" y="188" textAnchor="middle" fontSize="8" fontFamily="sans-serif" fill={ACCENT} opacity="0.85">cuadrado 4 × 4 cm en las 4 puntas</text>
                   </svg>
                 </div>
               </motion.div>
@@ -554,11 +556,9 @@ export function Module13Practica() {
                 <div className="w-full overflow-hidden pt-6">
                   <svg width="100%" viewBox="0 0 330 190" fill="none" style={{ maxWidth: 400, margin: '0 auto', display: 'block' }}>
                     <rect x="105" y="24" width="120" height="140" fill="#F5F0E8" stroke="#1a1a1a" strokeWidth="1.2" />
-                    <rect x="91" y="10" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
-                    <rect x="211" y="10" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
-                    <rect x="91" y="150" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
-                    <rect x="211" y="150" width="28" height="28" fill="none" stroke={ACCENT} strokeWidth="1.6" strokeDasharray="3 2" />
-                    <text x="165" y="188" textAnchor="middle" fontSize="8" fontFamily="sans-serif" fill={ACCENT} opacity="0.85">cuadrado 4 × 4 cm en las 4 puntas</text>
+                    <line x1="105" y1="24" x2="105" y2="164" stroke={BIES_COLOR} strokeWidth="4" strokeLinecap="round" />
+                    <line x1="225" y1="24" x2="225" y2="164" stroke={BIES_COLOR} strokeWidth="4" strokeLinecap="round" />
+                    <text x="165" y="184" textAnchor="middle" fontSize="8" fontFamily="sans-serif" fill={BIES_COLOR} opacity="0.85">bies cubriendo los laterales</text>
                   </svg>
                 </div>
               </motion.div>
