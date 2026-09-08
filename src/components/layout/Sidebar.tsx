@@ -19,6 +19,8 @@ export function Sidebar() {
   const [module11Open, setModule11Open] = useState(() => location.pathname.startsWith('/module11'));
   const [module12Open, setModule12Open] = useState(() => location.pathname.startsWith('/module12'));
   const [module13Open, setModule13Open] = useState(() => location.pathname.startsWith('/module13'));
+  const [module14Open, setModule14Open] = useState(() => location.pathname.startsWith('/module14'));
+  const [module15Open, setModule15Open] = useState(() => location.pathname.startsWith('/module15'));
   const [prevLocation, setPrevLocation] = useState(location);
 
   // Derived state during render (React-approved pattern — no useEffect needed)
@@ -38,6 +40,8 @@ export function Sidebar() {
     if (location.pathname.startsWith('/module11')) setModule11Open(true);
     if (location.pathname.startsWith('/module12')) setModule12Open(true);
     if (location.pathname.startsWith('/module13')) setModule13Open(true);
+    if (location.pathname.startsWith('/module14')) setModule14Open(true);
+    if (location.pathname.startsWith('/module15')) setModule15Open(true);
   }
 
   const toggleSidebar = () => setIsOpen(!isOpen);
@@ -864,6 +868,126 @@ export function Sidebar() {
                 </NavLink>
                 <NavLink
                   to="/module13/practica"
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Práctica</span>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
+          {/* Módulo XIV — collapsible group */}
+          <div>
+            <button
+              onClick={() => setModule14Open((v) => !v)}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                location.pathname.startsWith('/module14')
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )}
+            >
+              <Scissors size={18} className="shrink-0" />
+              <span className="font-body flex-1 text-left">Módulo XIV: Esenciales a la Hora de Coser</span>
+              <ChevronDown
+                size={14}
+                className={cn(
+                  "shrink-0 transition-transform duration-200",
+                  module14Open ? "rotate-180" : "rotate-0"
+                )}
+              />
+            </button>
+
+            <div
+              className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                module14Open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              )}
+            >
+              <div className="pl-4 pt-1 space-y-1">
+                <NavLink
+                  to="/module14"
+                  end
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Teoría</span>
+                </NavLink>
+                <NavLink
+                  to="/module14/practica"
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Práctica</span>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
+          {/* Módulo XV — collapsible group */}
+          <div>
+            <button
+              onClick={() => setModule15Open((v) => !v)}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                location.pathname.startsWith('/module15')
+                  ? "bg-dark/95 text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-white/60 hover:text-dark"
+              )}
+            >
+              <Scissors size={18} className="shrink-0" />
+              <span className="font-body flex-1 text-left">Módulo XV: Cómo Calcular Tela</span>
+              <ChevronDown
+                size={14}
+                className={cn(
+                  "shrink-0 transition-transform duration-200",
+                  module15Open ? "rotate-180" : "rotate-0"
+                )}
+              />
+            </button>
+
+            <div
+              className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                module15Open ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              )}
+            >
+              <div className="pl-4 pt-1 space-y-1">
+                <NavLink
+                  to="/module15"
+                  end
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
+                      isActive
+                        ? "border-dark text-dark bg-dark/5"
+                        : "border-border/40 text-muted-foreground hover:text-dark hover:bg-white/60 hover:border-dark/30"
+                    )
+                  }
+                >
+                  <span className="font-body">Teoría</span>
+                </NavLink>
+                <NavLink
+                  to="/module15/practica"
                   className={({ isActive }) =>
                     cn(
                       "flex items-center gap-3 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 border-l-2",
