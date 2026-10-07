@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
+import { RutaProtegida } from './components/acceso/RutaProtegida';
 import { Home } from './pages/Home';
 import { Module1 } from './pages/Module1';
 import { Module2 } from './pages/Module2';
@@ -42,40 +43,42 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="module1" element={<Module1 />} />
-          <Route path="module1/practica" element={<Module1Practica />} />
-          <Route path="module2" element={<Module2 />} />
-          <Route path="module2/practica" element={<Module2Practica />} />
-          <Route path="module3" element={<Module3 />} />
-          <Route path="module3/practica" element={<Module3Practica />} />
-          <Route path="module4" element={<Module4 />} />
-          <Route path="module4/practica" element={<Module4Practica />} />
-          <Route path="module5" element={<Module5 />} />
-          <Route path="module5/practica" element={<Module5Practica />} />
-          <Route path="module6" element={<Module6 />} />
-          <Route path="module6/practica" element={<Module6Practica />} />
-          <Route path="module7" element={<Module7 />} />
-          <Route path="module7/practica" element={<Module7Practica />} />
-          <Route path="module8" element={<Module8 />} />
-          <Route path="module8/practica" element={<Module8Practica />} />
-          <Route path="module9" element={<Module9 />} />
-          <Route path="module9/practica" element={<Module9Practica />} />
-          <Route path="module10" element={<Module10 />} />
-          <Route path="module10/practica" element={<Module10Practica />} />
-          <Route path="module11" element={<Module11 />} />
-          <Route path="module11/practica" element={<Module11Practica />} />
-          <Route path="module12" element={<Module12 />} />
-          <Route path="module12/practica" element={<Module12Practica />} />
-          <Route path="module13" element={<Module13 />} />
-          <Route path="module13/practica" element={<Module13Practica />} />
-          <Route path="module14" element={<Module14 />} />
-          <Route path="module14/practica" element={<Module14Practica />} />
-          <Route path="module15" element={<Module15 />} />
-          <Route path="module15/practica" element={<Module15Practica />} />
-          <Route path="module16" element={<Module16 />} />
-          <Route path="module16/practica" element={<Module16Practica />} />
-          <Route path="module17" element={<Module17 />} />
-          <Route path="module17/practica" element={<Module17Practica />} />
+          <Route element={<RutaProtegida />}>
+            <Route path="module1" element={<Module1 />} />
+            <Route path="module1/practica" element={<Module1Practica />} />
+            <Route path="module2" element={<Module2 />} />
+            <Route path="module2/practica" element={<Module2Practica />} />
+            <Route path="module3" element={<Module3 />} />
+            <Route path="module3/practica" element={<Module3Practica />} />
+            <Route path="module4" element={<Module4 />} />
+            <Route path="module4/practica" element={<Module4Practica />} />
+            <Route path="module5" element={<Module5 />} />
+            <Route path="module5/practica" element={<Module5Practica />} />
+            <Route path="module6" element={<Module6 />} />
+            <Route path="module6/practica" element={<Module6Practica />} />
+            <Route path="module7" element={<Module7 />} />
+            <Route path="module7/practica" element={<Module7Practica />} />
+            <Route path="module8" element={<Module8 />} />
+            <Route path="module8/practica" element={<Module8Practica />} />
+            <Route path="module9" element={<Module9 />} />
+            <Route path="module9/practica" element={<Module9Practica />} />
+            <Route path="module10" element={<Module10 />} />
+            <Route path="module10/practica" element={<Module10Practica />} />
+            <Route path="module11" element={<Module11 />} />
+            <Route path="module11/practica" element={<Module11Practica />} />
+            <Route path="module12" element={<Module12 />} />
+            <Route path="module12/practica" element={<Module12Practica />} />
+            <Route path="module13" element={<Module13 />} />
+            <Route path="module13/practica" element={<Module13Practica />} />
+            <Route path="module14" element={<Module14 />} />
+            <Route path="module14/practica" element={<Module14Practica />} />
+            <Route path="module15" element={<Module15 />} />
+            <Route path="module15/practica" element={<Module15Practica />} />
+            <Route path="module16" element={<Module16 />} />
+            <Route path="module16/practica" element={<Module16Practica />} />
+            <Route path="module17" element={<Module17 />} />
+            <Route path="module17/practica" element={<Module17Practica />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

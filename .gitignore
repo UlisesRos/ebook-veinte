@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Lista real de alumnas (nombre, celular, email): el repo es público, nunca se sube
+alumnas/*.csv
+!alumnas/alumnas.ejemplo.csv
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

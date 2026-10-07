@@ -1,11 +1,23 @@
 import { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { Home, Menu, X, Scissors, ChevronDown } from 'lucide-react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Home, Menu, X, Scissors, ChevronDown, Lock, LogOut } from 'lucide-react';
 import { cn } from '../../lib/utils';
+import { useAcceso } from '../../hooks/useAcceso';
+import { salir } from '../../lib/acceso';
 
 export function Sidebar() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const tieneAcceso = useAcceso();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Mientras no haya ingresado con su email, cada módulo muestra un candado.
+  const candado = !tieneAcceso && <Lock size={13} className="shrink-0 opacity-60" aria-hidden="true" />;
+
+  const cerrarAcceso = () => {
+    navigate('/');
+    salir();
+  };
   const [module1Open, setModule1Open] = useState(() => location.pathname === '/module1' || location.pathname.startsWith('/module1/'));
   const [module2Open, setModule2Open] = useState(() => location.pathname.startsWith('/module2'));
   const [module3Open, setModule3Open] = useState(() => location.pathname.startsWith('/module3'));
@@ -113,6 +125,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo I: Costura Inicial</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -177,6 +190,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo II: Técnicas Fundamentales</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -239,6 +253,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo III: Forro y Fuelle</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -300,6 +315,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo IV: Bies y Cierres</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -360,6 +376,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo V: Abrojos y Broches</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -420,6 +437,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo VI: Piquetes</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -480,6 +498,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo VII: Tipos de Telas</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -540,6 +559,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo VIII: Interiores</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -600,6 +620,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo IX: Decoración</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -660,6 +681,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo X: Márgenes de Costura</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -720,6 +742,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo XI: Moldería</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -780,6 +803,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo XII: Prensatelas</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -840,6 +864,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo XIII: Composición de Telas</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -900,6 +925,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo XIV: Esenciales a la Hora de Coser</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -960,6 +986,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo XV: Cómo Calcular Tela</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -1020,6 +1047,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo XVI: Costura y Emprendimiento</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -1080,6 +1108,7 @@ export function Sidebar() {
             >
               <Scissors size={18} className="shrink-0" />
               <span className="font-body flex-1 text-left">Módulo XVII: Adaptación de Moldes Básicos</span>
+              {candado}
               <ChevronDown
                 size={14}
                 className={cn(
@@ -1134,6 +1163,15 @@ export function Sidebar() {
           <p className="text-xs text-muted-foreground font-body">
             © {new Date().getFullYear()} Veinte Studio
           </p>
+          {tieneAcceso && (
+            <button
+              onClick={cerrarAcceso}
+              className="mt-2 inline-flex min-h-11 items-center gap-1.5 rounded-md px-3 text-xs text-muted-foreground font-body underline-offset-4 transition-colors duration-150 hover:text-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-dark"
+            >
+              <LogOut size={13} aria-hidden="true" />
+              Cerrar acceso en este dispositivo
+            </button>
+          )}
         </div>
       </aside>
     </>
